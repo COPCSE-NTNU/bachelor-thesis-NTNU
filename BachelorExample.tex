@@ -1,0 +1,80 @@
+%% This document gives an example on how to use the ntnubachelorthesis
+%% LaTeX document class.
+%% Use oneside for PDF delivery and twoside for printing in a book style
+%% use language english, norsk,samisk and one of the following shortenings
+%%  ``BSP'' Bachelor i Spillprogrammering,\\
+%%  ``BRD'' Bachelor i drift av nettverk og datasystemer,\\
+%%  ``BIS'' Bachelor i Informasjonssikkerhet,\\
+%%  ``BPU'' Bachelor i Programvareutvikling, \\
+%%  ``BIND'' Bachelor i Ingeniørfad - data. 
+\documentclass[BSP,english,oneside]{ntnubachelorthesis}
+
+\usepackage{csvsimple}
+\usepackage{booktabs}
+
+\newcommand{\comment}[1]{\textcolor{blue}{\emph{#1}}}  %% use of the colour and you can see how to use commands with parts \comment{so what}
+
+%% The class files defines these two
+%% \newcommand{\NTNU}{Norwegian University for Science and Technology} %
+
+% you can create you one #define like structures using the \newcommand feature
+% you can change behaviour using \renewcommand
+
+\newcommand{\com}[1]{{\color{red}#1}} % supervisor comment
+%\renewcommand{\com}[1]{} %remove starting % to remove supervisor comments
+% This will appear in text \com{Lecuters comment} and be visible unless you uncomment
+% the renewcommand line.
+
+\newcommand{\todo}[1]{{\color{green}#1}} % items to do
+%\renewcommand{\todo}[1]{} %remove starting % to remove items to do
+
+\newcommand{\n}[1]{{\color{blue}#1}} % other comment
+%\renewcommand{\n}[1]{} %remove starting % to remove notes
+
+\newcommand{\dn}[1]{} % add the d to a note to say that you have finished with it.
+
+
+% Norwegian Characters,  needs the {} or to be separate from the next letters
+% \o{}   \aa{}   \ae{}   so at the end of a word you can use \o  \aa   \ae
+% \O{}   \AA{}   \AE{}   you can also just leave a space and latex will remove it
+%                        eg, NTNU i Gj\o vik  or NTNU i Gj\o{}vik
+
+
+
+
+
+\begin{document}
+
+\input{BachelorThesisData} % this is the file which contains all the details about your thesis
+
+\makefrontpages % make the frontpages
+
+\input{bachelorIntro}
+
+
+\tableofcontents
+\listoffigures
+\listoftables
+
+
+\input{introduction}
+\input{requirements}
+\input{technical}
+\input{process}
+\input{implementation}
+\input{deployment}
+\input{testing}
+\input{discussion}
+\input{conclusion}
+
+
+\bibliographystyle{ntnubachelorthesis}
+\bibliography{BachelorExample}
+
+\appendix %after this line all chapters will have leters instead of numbers
+%\input{projectplan}
+%\input{gantt}
+\input{meetinglog}
+%\input{progressreviews}
+%\input{worklog}
+
