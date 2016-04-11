@@ -91,6 +91,7 @@
 \def\thesis@authorA{}
 \def\thesis@authorB{}
 \def\thesis@authorC{}
+\def\thesis@authorD{}
 \def\thesis@supervisor{}
 \def\thesis@supervisorA{}
 \def\thesis@oppdragsgiver{}
@@ -502,23 +503,15 @@ Use $\backslash$useyear\{<year>\} to set year.
     \let\footnotesize\small
     \let\footnoterule\relax
     \let \footnote \thanks
-    \vspace*{6.9mm}
-    {%
-    \fontsize{14}{16}\selectfont 
-    BACHELOROPPGAVE:\\
-	\par}
-    \hspace*{-5mm}
-{
-
-    \hspace{-5mm} \includegraphics[width=130mm,height=70mm]{greybackground} \\ %should be 127 and 67 but front cover wrong
-      \vskip -5.5cm % 7 gets to the top of the box
-      
-        \begin{tabular}[10cm]{p{0.5cm}p{10.2cm}l}%
-          &{\fontsize{14}{16}\selectfont \textbf{\thesis@title} \par} &\rule[-7cm]{0cm}{7cm}
-        \end{tabular}
-
-\par}
-   \fontsize{14}{16}\selectfont 
+    \null\vfil
+    \includegraphics[width=200pt]{hovedlogo_eng} \\    
+    \vskip 75\p@
+    \begin{center}%
+      {\fontsize{22}{25}\selectfont \thesis@title}%
+\vskip 3em%
+{\large
+	\lineskip .75em%
+   \fontsize{18}{20}\selectfont 
    FORFATTERE:\\
    \begin{tabular}[10cm]{p{1.5cm}l}%
           \rule[-4cm]{0cm}{4cm}&{\fontsize{14}{16}\selectfont 
@@ -526,12 +519,21 @@ Use $\backslash$useyear\{<year>\} to set year.
           \thesis@authorA \\
           \thesis@authorB \\
           \thesis@authorC \\
-          
+          \thesis@authorD \\
           } 
           \par}
-        \end{tabular}\par
+        \end{tabular}\par}
+	\vskip 1em
   DATO: \\
-  \hspace*{21.5mm}{\fontsize{14}{16}\selectfont {\nmt@frontpagesyear} \par}
+  \fontsize{14}{16}\selectfont {\nmt@frontpagesyear}
+	\end{center}%
+	
+	\vspace*{\fill}
+		
+	Veiledere:  
+	\hspace*{21.5mm}{	\thesis@supervisor\\
+		 \thesis@supervisorA\\ \par}
+		
   \end{titlepage}
 
  \cleardoublepage
@@ -573,7 +575,7 @@ Use $\backslash$useyear\{<year>\} to set year.
   
   \newpage
   {%
-    \fontsize{14}{16}\selectfont 
+    \fontsize{20}{24}\selectfont 
     Summary of Graduate Project\\
 	\par}
 %\addcontentsline{toc}{chapter}{Summary}
