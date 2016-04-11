@@ -414,12 +414,11 @@ Use $\backslash$useyear\{<year>\} to set year.
 
 \DeclareOption{BSP}{%
   \renewcommand\nmt@firstpagetext{%
-    \begin{tabular}{ccc}
-	Bacheloroppgave&&\\
-    	Bachelor i &Spill &Programmering\\
-    	20 &ECTS&\\
-    	Avdeling for& informatikk &og medieteknikk\\
-    	\NTNUno, &\nmt@frontpagesyear\\
+    \begin{tabular}{c}
+    	Bachelor i Spill Programmering\\
+    	20 ECTS\\
+    	Avdeling for informatikk og medieteknikk\\
+    	\NTNUno,\\
     \end{tabular}
   }
   \renewcommand\nmt@secondpagetext{\thesis@publishertext}
@@ -427,12 +426,11 @@ Use $\backslash$useyear\{<year>\} to set year.
 
 \DeclareOption{BRD}{%
   \renewcommand\nmt@firstpagetext{%
-    \begin{tabular}{ccc}
-	Bacheloroppgave&&\\
-    	Bachelor i & drift av nettverk & og datasystemer \\
-    	20 &ECTS&\\
-    	Avdeling for& informatikk &og medieteknikk\\
-    	\NTNUno, &\nmt@frontpagesyear\\
+    \begin{tabular}{c}
+    	Bachelor i drift av nettverk  og datasystemer \\
+    	20 ECTS\\
+    	Avdeling for informatikk og medieteknikk\\
+    	\NTNUno, \\
     \end{tabular}
   }
   \renewcommand\nmt@secondpagetext{\thesis@publishertext}
@@ -440,12 +438,11 @@ Use $\backslash$useyear\{<year>\} to set year.
 
 \DeclareOption{BIND}{%
   \renewcommand\nmt@firstpagetext{%
-    \begin{tabular}{ccc}
-	Bacheloroppgave&&\\
-    	Bachelor i & ingeniørfag – data &  \\
-    	20 &ECTS&\\
-    	Avdeling for& informatikk &og medieteknikk\\
-    	\NTNUno, &\nmt@frontpagesyear\\
+    \begin{tabular}{c}
+    	Bachelor i ingeniørfag – data \\
+    	20 ECTS\\
+    	Avdeling for informatikk og medieteknikk\\
+    	\NTNUno \\
     \end{tabular}
   }
   \renewcommand\nmt@secondpagetext{\thesis@publishertext}
@@ -453,12 +450,11 @@ Use $\backslash$useyear\{<year>\} to set year.
 
 \DeclareOption{BIS}{%
   \renewcommand\nmt@firstpagetext{%
-    \begin{tabular}{ccc}
-	Bacheloroppgave&&\\
-    	Bachelor i & informasjonssikkerhet &  \\
-    	20 &ECTS&\\
-    	Avdeling for& informatikk &og medieteknikk\\
-    	\NTNUno, &\nmt@frontpagesyear\\
+    \begin{tabular}{c}
+    	Bachelor i informasjonssikkerhet \\
+    	20 ECTS\\
+    	Avdeling for informatikk og medieteknikk\\
+    	\NTNUno\\
     \end{tabular}
   }
   \renewcommand\nmt@secondpagetext{\thesis@publishertext}
@@ -467,12 +463,11 @@ Use $\backslash$useyear\{<year>\} to set year.
 \DeclareOption{BPU}{%
 
   \renewcommand\nmt@firstpagetext{%
-    \begin{tabular}{ccc}
-	Bacheloroppgave&&\\
-    	Bachelor i & programvareutvikling &  \\
-    	20 &ECTS&\\
-    	Avdeling for& informatikk &og medieteknikk\\
-    	\NTNUno, &\nmt@frontpagesyear\\
+    \begin{tabular}{c}
+    	Bachelor i programvareutvikling \\
+    	20 ECTS\\
+    	Avdeling for informatikk og medieteknikk\\
+    	\NTNUno\\
     \end{tabular}
   }
   \renewcommand\nmt@secondpagetext{\thesis@publishertext}
@@ -511,28 +506,33 @@ Use $\backslash$useyear\{<year>\} to set year.
 \vskip 3em%
 {\large
 	\lineskip .75em%
-   \fontsize{18}{20}\selectfont 
-   FORFATTERE:\\
+   \fontsize{14}{16}\selectfont{ 
+   FORFATTERE:}\\
    \begin{tabular}[10cm]{p{1.5cm}l}%
           \rule[-4cm]{0cm}{4cm}&{\fontsize{14}{16}\selectfont 
-          \parbox{6cm}{\thesis@author \\
+          \parbox{6cm}{
+					\thesis@author \\
           \thesis@authorA \\
           \thesis@authorB \\
           \thesis@authorC \\
-          \thesis@authorD \\
+ %         \thesis@authorD \\
           } 
           \par}
         \end{tabular}\par}
 	\vskip 1em
-  DATO: \\
-  \fontsize{14}{16}\selectfont {\nmt@frontpagesyear}
+	\fontsize{14}{16} \selectfont{
+	\nmt@firstpagetext \\
+	\vskip 1em
+  \nmt@frontpagesyear}
+	
+	
 	\end{center}%
 	
 	\vspace*{\fill}
-		
+	{\fontsize{14}{16}\selectfont	
 	Veiledere:  
 	\hspace*{21.5mm}{	\thesis@supervisor\\
-		 \thesis@supervisorA\\ \par}
+		 \thesis@supervisorA\\ \par}}
 		
   \end{titlepage}
 
