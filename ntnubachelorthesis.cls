@@ -12,8 +12,8 @@
 %%
 
 %% MACRO
-\newcommand{\NTNUen}{{N}orwegian {U}niversity of {S}cience and {T}echnology} %the extra {'s protect upper case
-\newcommand{\NTNUnor}{{N}orges teknisk-naturvitenskapelige universitet} 
+\newcommand{\NTNU}{{N}orwegian {U}niversity of {S}cience and {T}echnology} %the extra {'s protect upper case
+\newcommand{\NTNUno}{{N}orges teknisk-naturvitenskapelige universitet} 
 \newcommand{\NTNUgjovik}{{NTNU} i {G}j\o{}vik}
 \newcommand{\NTNUalesund}{{NTNU} i \AAlesund}
 
@@ -72,7 +72,7 @@
 
 
 \AtBeginDocument{\baselineskip=14pt%
-  \parskip=0pt%
+  \parskip=2pt%
   \parindent=14pt%
   \frenchspacing%
   \setcounter{secnumdepth}{2}%
@@ -95,25 +95,19 @@
 \def\thesis@supervisorA{}
 \def\thesis@oppdragsgiver{}
 
-\def\thesis@juryA{}
-\def\thesis@juryB{}
-\def\thesis@juryC{}
-\def\thesis@juryD{}
-
-
-\def\gmt@keywords{}
-\def\gmt@desc{}
-\def\gmt@pub{}
+\def\nmt@keywords{}
+\def\nmt@desc{}
+\def\nmt@pub{}
 
 \def\thesis@titleNOR{Use thesistitleNor to insert your title here.}
-\def\gmt@keywordsNOR{}
-\def\gmt@descNOR{}
-\def\gmt@pubNOR{}
+\def\nmt@keywordsNOR{}
+\def\nmt@descNOR{}
+\def\nmt@pubNOR{}
 
-\def\gmt@number{}
-\def\gmt@contact{}
-\def\gmt@appnumber{}
-\def\gmt@pagecount{}
+\def\nmt@number{}
+\def\nmt@appnumber{}
+\def\nmt@pagecount{}
+\def\nmt@contact{}
 
 \def\thesistitle#1{\def\thesis@title{#1}}
 \def\thesisdate#1{\def\thesis@date{#1}}
@@ -121,34 +115,27 @@
 \def\thesisauthorA#1{\def\thesis@authorA{#1}}
 \def\thesisauthorB#1{\def\thesis@authorB{#1}}
 \def\thesisauthorC#1{\def\thesis@authorC{#1}}
+\def\thesisauthorD#1{\def\thesis@authorD{#1}}
 \def\thesissupervisor#1{\def\thesis@supervisor{#1}}
 \def\thesissupervisorA#1{\def\thesis@supervisorA{#1}}
-\def\gmtoppdragsgiver#1{\def\thesis@oppdragsgiver{#1}}
+\def\nmtoppdragsgiver#1{\def\thesis@oppdragsgiver{#1}}
 
 \def\thesisHostInstitution#1{\def\thesis@hostInstitution{#1}}
 \def\thesisPublisherText#1{\def\thesis@publishertext{#1}}
-\def\thesisjuryA#1{\def\thesis@juryA{#1}}
-\def\thesisjuryB#1{\def\thesis@juryB{#1}}
-\def\thesisjuryC#1{\def\thesis@juryC{#1}}
-\def\thesisjuryD#1{\def\thesis@juryD{#1}}
 
+\def\nmtkeywords#1{\def\nmt@keywords{#1}}
+\def\nmtdesc#1{\def\nmt@desc{#1}}
+\def\nmtpub#1{\def\nmt@pub{#1}}
 
-
-\def\gmtkeywords#1{\def\gmt@keywords{#1}}
-\def\gmtdesc#1{\def\gmt@desc{#1}}
-\def\gmtpub#1{\def\gmt@pub{#1}}
-
-\def\gmtkeywordsNOR#1{\def\gmt@keywordsNOR{#1}}
-\def\gmtdescNOR#1{\def\gmt@descNOR{#1}}
-\def\gmtpubNOR#1{\def\gmt@pubNOR{#1}}
+\def\nmtkeywordsNOR#1{\def\nmt@keywordsNOR{#1}}
+\def\nmtdescNOR#1{\def\nmt@descNOR{#1}}
+\def\nmtpubNOR#1{\def\nmt@pubNOR{#1}}
 \def\thesistitleNOR#1{\def\thesis@titleNOR{#1}}
 
 
-\def\gmtnumber#1{\def\gmt@number{#1}}
-\def\gmtbachelornumber#1{\def\gmt@number{#1}}
-\def\gmtcontact#1{\def\gmt@contact{#1}}
-\def\gmtappnumber#1{\def\gmt@appnumber{#1}}
-\def\gmtpagecount#1{\def\gmt@pagecount{#1}}
+\def\nmtpagecount#1{\def\nmt@pagecount{#1}}
+\def\nmtappnumber#1{\def\nmt@appnumber{#1}}
+\def\nmtcontact#1{\def\nmt@contact{#1}}
 
 \def\ps@ntnuheadings{%
   \def\@oddfoot{\reset@font\hfil\thepage\hfil}
@@ -157,13 +144,11 @@
   \def\@evenhead{\underline{\hbox
       to\hsize{\fontsize{7}{9}\selectfont\thesis@title\hfil}}}
   \let\@evenfoot=\@oddfoot}
+
 \pagestyle{ntnuheadings}
 % Empty page does not have header or footer
 \def\cleardoublepage{\clearpage\if@twoside \ifodd\c@page\else
     \hbox{}\thispagestyle{empty}\newpage\if@twocolumn\hbox{}\newpage\fi\fi\fi}
-
-\newif\if@masters
-\newif\if@CIMET
 
 
 % Title page
@@ -276,10 +261,11 @@
   \addcontentsline{toc}{chapter}{#1}%
   \fi
   \chaptermark{#1}%
+
 % Add extra space in list of figures and list of tables between
 % figures & tables belonging to different chapters:
-%  \addtocontents{lof}{\protect\addvspace{10\p@}}%
-%  \addtocontents{lot}{\protect\addvspace{10\p@}}%
+  \addtocontents{lof}{\protect\addvspace{5\p@}}%
+  \addtocontents{lot}{\protect\addvspace{5\p@}}%
   \if@twocolumn
   \@topnewpage[\@makechapterhead{{#2}}]%
   \else
@@ -348,24 +334,20 @@
 
 %% removed the old itemize material as it should be in a package enumitem
 %%
-%% GMT Frontpage by Kjetil:
+%% NMT Frontpage by Simon:
 %%
 
-\newcommand{\gmt@frontpagesyear}{%
+\newcommand{\nmt@frontpagesyear}{%
 Use $\backslash$useyear\{<year>\} to set year.
 }
 
 \newcommand{\useyear}[1]{%
-  \renewcommand{\gmt@frontpagesyear}{#1}
+  \renewcommand{\nmt@frontpagesyear}{#1}
 }
 
 
-\newcommand\gmt@firstpagetext{%
+\newcommand\nmt@firstpagetext{%
   \noindent Use this class with options\\ 
-  ``MMT'' Masters i Medieteknikk,\\
-  ``MACS'' Masters in Applied Computer Science,\\
-  ``MIS'' Masters i Informasjonssikkerhet,\\
-  ``CIMET'' Erasmus mundus Masters in Colour Science,\\
   ``BSP'' Bachelor i Spillprogrammering,\\
   ``BRD'' Bachelor i drift av nettverk og datasystemer,\\
   ``BIS'' Bachelor i Informasjonssikkerhet,\\
@@ -373,12 +355,8 @@ Use $\backslash$useyear\{<year>\} to set year.
   ``BIND'' Bachelor i Ingeniørfad - data. 
 }
 
-\newcommand\gmt@secondpagetext{%
+\newcommand\nmt@secondpagetext{%
   \noindent Use this class with options\\ 
-  ``MMT'' Masters i Medieteknikk,\\
-  ``MACS'' Masters in Applied Computer Science,\\
-  ``MIS'' Masters i Informasjonssikkerhet,\\
-  ``CIMET'' Erasmus mundus Masters in Colour Science,\\
   ``BSP'' Bachelor i Spillprogrammering,\\
   ``BRD'' Bachelor i drift av nettverk og datasystemer,\\
   ``BIS'' Bachelor i Informasjonssikkerhet,\\
@@ -388,332 +366,130 @@ Use $\backslash$useyear\{<year>\} to set year.
 
 	    
 
-
-
 %% OPTIONS (declare more here if needed)
 
 \DeclareOption{oneside}{\@twosidefalse \@mparswitchfalse%
 \geometry{a4paper, left=3.75cm, right=3.75cm, top=3cm, bottom=4cm,
   head=1.2cm, foot=2cm}}
+	
 \DeclareOption{twoside}{\@twosidetrue  \@mparswitchtrue%
 \geometry{a4paper, left=4.5cm, right=3cm, top=3cm, bottom=4cm,
   head=1.2cm, foot=2cm}}
 
 \newif\if@norsk
+\newif\if@nynorsk
 \newif\if@english
 
 
 \DeclareOption{norsk}{
    \@norsktrue 
+   \@nynorskfalse 
    \@englishfalse
 }
 
 \DeclareOption{english}{
    \@englishtrue 
+   \@nynorskfalse
    \@norskfalse
 }
 
-	\newcommand\gmt@CollegeNameText{%
+\DeclareOption{english}{
+   \@englishfalse 
+   \@nynorsktrue
+   \@norskfalse
+}
+
+	\newcommand\nmt@CollegeNameText{%
 		Department of Computer Science and Media Technology\\
-		Gj\o{}vik University College, 
+		\NTNU, 
 	}
 	
  \if@norsk
-	\renewcommand\gmt@CollegeNameText{%
+	\renewcommand\nmt@CollegeNameText{%
 	  	Avdeling for informatikk og medieteknikk\\
-	 	  H\o{}gskolen i Gj\o{}vik, 
+	 	\NTNUno, 
 	}  
 \fi
 
 \DeclareOption{BSP}{%
-  \renewcommand\gmt@firstpagetext{%
+  \renewcommand\nmt@firstpagetext{%
     \begin{tabular}{ccc}
 	Bacheloroppgave&&\\
     	Bachelor i &Spill &Programmering\\
     	20 &ECTS&\\
     	Avdeling for& informatikk &og medieteknikk\\
-    	H\o{}gskolen &i Gj\o{}vik, &\gmt@frontpagesyear\\
+    	\NTNUno, &\nmt@frontpagesyear\\
     \end{tabular}
   }
-  \renewcommand\gmt@secondpagetext{\thesis@publishertext}
+  \renewcommand\nmt@secondpagetext{\thesis@publishertext}
 }
 
 \DeclareOption{BRD}{%
-  \renewcommand\gmt@firstpagetext{%
+  \renewcommand\nmt@firstpagetext{%
     \begin{tabular}{ccc}
 	Bacheloroppgave&&\\
     	Bachelor i & drift av nettverk & og datasystemer \\
     	20 &ECTS&\\
     	Avdeling for& informatikk &og medieteknikk\\
-    	H\o{}gskolen &i Gj\o{}vik, &\gmt@frontpagesyear\\
+    	\NTNUno, &\nmt@frontpagesyear\\
     \end{tabular}
   }
-  \renewcommand\gmt@secondpagetext{\thesis@publishertext}
+  \renewcommand\nmt@secondpagetext{\thesis@publishertext}
 }
 
 \DeclareOption{BIND}{%
-  \renewcommand\gmt@firstpagetext{%
+  \renewcommand\nmt@firstpagetext{%
     \begin{tabular}{ccc}
 	Bacheloroppgave&&\\
     	Bachelor i & ingeniørfag – data &  \\
     	20 &ECTS&\\
     	Avdeling for& informatikk &og medieteknikk\\
-    	H\o{}gskolen &i Gj\o{}vik, &\gmt@frontpagesyear\\
+    	\NTNUno, &\nmt@frontpagesyear\\
     \end{tabular}
   }
-  \renewcommand\gmt@secondpagetext{\thesis@publishertext}
+  \renewcommand\nmt@secondpagetext{\thesis@publishertext}
 }
 
 \DeclareOption{BIS}{%
-  \renewcommand\gmt@firstpagetext{%
+  \renewcommand\nmt@firstpagetext{%
     \begin{tabular}{ccc}
 	Bacheloroppgave&&\\
     	Bachelor i & informasjonssikkerhet &  \\
     	20 &ECTS&\\
     	Avdeling for& informatikk &og medieteknikk\\
-    	H\o{}gskolen &i Gj\o{}vik, &\gmt@frontpagesyear\\
+    	\NTNUno, &\nmt@frontpagesyear\\
     \end{tabular}
   }
-  \renewcommand\gmt@secondpagetext{\thesis@publishertext}
+  \renewcommand\nmt@secondpagetext{\thesis@publishertext}
 }
 
 \DeclareOption{BPU}{%
 
-  \renewcommand\gmt@firstpagetext{%
+  \renewcommand\nmt@firstpagetext{%
     \begin{tabular}{ccc}
 	Bacheloroppgave&&\\
     	Bachelor i & programvareutvikling &  \\
     	20 &ECTS&\\
     	Avdeling for& informatikk &og medieteknikk\\
-    	H\o{}gskolen &i Gj\o{}vik, &\gmt@frontpagesyear\\
+    	\NTNUno, &\nmt@frontpagesyear\\
     \end{tabular}
   }
-  \renewcommand\gmt@secondpagetext{\thesis@publishertext}
+  \renewcommand\nmt@secondpagetext{\thesis@publishertext}
 }
 
 
-\DeclareOption{MMT}{%
-  \@masterstrue
-  \if@norsk
-  	\renewcommand\gmt@firstpagetext{%
-  	  Masteroppgave\\
-  	  Master i Teknologi - Medieteknikk\\
-	   30 ECTS\\
-	  \gmt@CollegeNameText
- 	}
-  \else
-	\renewcommand\gmt@firstpagetext{%
-	   Master's Thesis\\
-	   Master of Science in Media Technology\\
-	   30 ECTS\\
-	   \gmt@CollegeNameText
-	 }
-  \fi
-  \renewcommand\gmt@secondpagetext{\thesis@publishertext}
-}
-
-\DeclareOption{MACS}{%
-  \@masterstrue
-  \if@norsk
-  	\renewcommand\gmt@firstpagetext{%
-  	  Masteroppgave\\
-  	  Master in Applied Computer Science\\
-	   30 ECTS\\
-	  \gmt@CollegeNameText
- 	}
-  \else
-	\renewcommand\gmt@firstpagetext{%
-	   Master's Thesis\\
-	   Master of Applied Computer Science\\
-	   30 ECTS\\
-	   \gmt@CollegeNameText
-	 }
-  \fi
-  \renewcommand\gmt@secondpagetext{\thesis@publishertext}
-}
-
-
-\DeclareOption{MIS}{%
-  \@masterstrue
-  \if@norsk  
-	\renewcommand\gmt@firstpagetext{%
-    	  Masteroppgave\\
-    	  Master i informasjonssikkerhet\\
-	  30 ECTS\\
-	  \gmt@CollegeNameText \gmt@frontpagesyear 
-	}
-  \else
-	\renewcommand\gmt@firstpagetext{%
- 	  Master's Thesis\\
-    	  Master of Science in Information Security\\
-  	  30 ECTS\\
- 	  \gmt@CollegeNameText \gmt@frontpagesyear 
-	}
-  \fi
-  \renewcommand\gmt@secondpagetext{\thesis@publishertext}
-% \def@masters
-}
-
-\DeclareOption{CIMET}{% not implemented yet
-  \@masterstrue
-  \@CIMETtrue
-  \if@norsk  
-	\renewcommand\gmt@firstpagetext{%
-    	  Only english for CIMET thesis\\
-	\\
-	}
-  \else
-	\renewcommand\gmt@firstpagetext{%
- 	  Master's Thesis\\
-    	  Master In Colour science\\
-       	  30 ECTS\\
-	  \gmt@CollegeNameText
-	}
-  \fi
-  \renewcommand\gmt@secondpagetext{\thesis@publishertext}
-}
 
 \ProcessOptions\relax
 
 
-\if@CIMET
-\else
-\thesisPublisherText{%
-  \noindent
-  Avdeling for\\
-  informatikk og medieteknikk\\
-  H\o{}gskolen i Gj\o{}vik\\
-  Postboks 191\\
-  2802 Gj\o{}vik
-  \vskip 3em%
-  \noindent
-  Department of Computer Science\\
-  and Media Technology\\
-  Gj\o{}vik University College\\
-  Box 191\\
-  N-2802 Gj\o{}vik\\
-  Norway
-}
-\fi
+
 
 
 %% FRONTPAGE GENERATION
 \newcommand\makefrontpages{%
-	\if@masters
-	  \if@CIMET
-	     \makeCIMETfrontpages
-	   \else
-	     \makemastersfrontpages
-	   \fi
-	\else
 	  \makebachelorfrontpages
-	\fi
 }
 
-
-\newcommand\makemastersfrontpages{%
-  \begin{titlepage}%
-    %\thispagestyle{empty}
-    %\setcounter{page}\z@
-		\hypersetup{pageanchor=false}
-    \let\footnotesize\small
-    \let\footnoterule\relax
-    \let \footnote \thanks
-    \null\vfil
-    
-    \vskip 165\p@
-    \begin{center}%
-      {\fontsize{20}{24}\selectfont \thesis@title}%
-      \vskip 3em%
-      {%\large
-        \lineskip .75em%
-        \begin{tabular}[t]{c}%
-          {\fontsize{14}{16}\selectfont \thesis@author \par} %\@author
-        \end{tabular}\par}%
-      % \vskip 1.5em%
-      % {\large Dato \par}%       % Set date in \large size.
-    \end{center}\par
-    \@thanks
-    \vfill
-    \vskip 3em
-    \begin{center}%
-      \includegraphics[width=70pt]{higlogo} \\
-      \medskip
-      \gmt@firstpagetext
-    \end{center}
-  \end{titlepage}
-
-  \newpage
-  \thispagestyle{empty}
-  \null\vfil
-  \vfill
-  \vbox{\footnotesize{\gmt@secondpagetext}}
-		\hypersetup{pageanchor=true}
-}
-
-
-\newcommand\makeCIMETfrontpages{%
-    \begin{titlepage}%
-    % \thispagestyle{empty}
-    % \setcounter{page}\z@
-    \let\footnotesize\small
-    \let\footnoterule\relax
-    \let \footnote \thanks
-    \null\vfil
-    
-	\begin{center}
-		{\fontsize{16}{20}\selectfont Master Erasmus Mundus in \\ Color in Informatics and Media Technology (CIMET)\\}
-	\end{center}
-	%\vskip 165\p@
-    \vskip 3em
-	\begin{center}
-		\includegraphics[width=400pt]{CIMETlogo}
-      \medskip
-    \end{center}
-	%\vskip 165\p@
-    \vskip 3em
-	
-    \begin{center}%
-      {\fontsize{16}{18}\selectfont \thesis@title \\}%
-	  \vskip 1em
-	  {\fontsize{14}{16}\selectfont Master Thesis Report}%
-      \vskip 4em
-	  {\fontsize{14}{16}\selectfont Presented by}
-      \vskip 2em
-	  
-      {%\large
-        \lineskip .75em%
-        \begin{tabular}[t]{c}%
-          {\fontsize{14}{16}\selectfont \thesis@author \par} %\@author
-        \end{tabular}\par}%
-      % \vskip 1.5em%
-      % {\large Dato \par}%       % Set date in \large size.
-	  \vskip 2em
-	  {\fontsize{14}{16}\selectfont and defended at}
-      \vskip 2em
-	  {\fontsize{14}{16}\selectfont \thesis@hostInstitution}
-	  
-    \end{center}\par
-    \@thanks
-    \vfill
-    \vskip 1em
-	
-	{\fontsize{12}{14}\selectfont Academic Supervisor(s): \thesis@supervisor \\
-	\hspace*{50mm} \thesis@supervisorA}
-	\vskip 1em
-	{\fontsize{12}{14}\selectfont Jury Committee:\hspace*{5mm} \thesis@juryA \\
-	\hspace*{40mm} \thesis@juryB\\
-	\hspace*{40mm} \thesis@juryC\\
-	\hspace*{40mm} \thesis@juryD}
-	
-  \end{titlepage}
-
-  \newpage
-  \thispagestyle{empty}
-  \null\vfil
-  \vfill
-  \vbox{\footnotesize{\gmt@secondpagetext}}
-}
 
 
 
@@ -755,7 +531,7 @@ Use $\backslash$useyear\{<year>\} to set year.
           \par}
         \end{tabular}\par
   DATO: \\
-  \hspace*{21.5mm}{\fontsize{14}{16}\selectfont {\gmt@frontpagesyear} \par}
+  \hspace*{21.5mm}{\fontsize{14}{16}\selectfont {\nmt@frontpagesyear} \par}
   \end{titlepage}
 
  \cleardoublepage
@@ -770,7 +546,7 @@ Use $\backslash$useyear\{<year>\} to set year.
 \begin{tabular}{p{0.35\textwidth}@{  }p{0.65\textwidth}}
 	Tittel: & \textbf{\thesis@titleNOR}\\
 		&\\
-	Dato: & \gmt@frontpagesyear\\
+	Dato: & \nmt@frontpagesyear\\
 		&\\
 	Deltakere: & \thesis@author\\
 		& \thesis@authorA\\
@@ -781,15 +557,15 @@ Use $\backslash$useyear\{<year>\} to set year.
 		&\\
 	Oppdragsgiver: & \thesis@oppdragsgiver\\
 		&\\
-	Kontaktperson: & \gmt@contact\\
+	Kontaktperson: & \nmt@contact\\
 		&\\
-	N\o{}kkelord: & \gmt@keywordsNOR\\
+	N\o{}kkelord: & \nmt@keywordsNOR\\
 	Antall sider: & \pageref{LastPage}\\
-	Antall vedlegg: & \gmt@appnumber\\
-	Tilgjengelighet: & \AA{}pen\\ % this needs updating \gmt@pubNOR}\\
+	Antall vedlegg: & \nmt@appnumber\\
+	Tilgjengelighet: & \AA{}pen\\ % this needs updating \nmt@pubNOR}\\
 		&\\
 	\hline\\
-	Sammendrag: & \gmt@descNOR\\
+	Sammendrag: & \nmt@descNOR\\
   \end{tabular}
 
 % this should be a function call so that the layout is done in a single place. This is currently bad coding but I do not have time to fix it at the moment.  Can be fixed this later.
@@ -805,7 +581,7 @@ Use $\backslash$useyear\{<year>\} to set year.
 \begin{tabular}{p{0.35\textwidth}@{  }p{0.65\textwidth}}
 	Title: & \textbf{\thesis@title}\\
 		&\\
-	Date: & \gmt@frontpagesyear\\
+	Date: & \nmt@frontpagesyear\\
 		&\\
 	Participants: & \thesis@author\\
 		& \thesis@authorA\\
@@ -816,15 +592,15 @@ Use $\backslash$useyear\{<year>\} to set year.
 		&\\
 	Employer: & \thesis@oppdragsgiver\\
 		&\\
-	Contact Person: & \gmt@contact\\
+	Contact Person: & \nmt@contact\\
 		&\\
-	Keywords: & \gmt@keywords\\
+	Keywords: & \nmt@keywords\\
 	Pages: & \pageref{LastPage}\\
-	Attachments: & \gmt@appnumber\\
-	Availability: & Open\\ % this needs updating to use \gmt@pub}\\
+	Attachments: & \nmt@appnumber\\
+	Availability: & Open\\ % this needs updating to use \nmt@pub}\\
 		&\\
 	\hline\\
-	Abstract: & \gmt@desc\\
+	Abstract: & \nmt@desc\\
 \end{tabular}
 
 		\hypersetup{pageanchor=true}
