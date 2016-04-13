@@ -381,8 +381,36 @@ Use $\backslash$useyear\{<year>\} to set year.
 \newif\if@nynorsk
 \newif\if@english
 
+	\newcommand\nmt@DepartmentNameText{%
+		Department of Computer Science and Media Technology\\
+		\NTNU, 
+	}
+	
+	\newcommand\nmt@DegreeNameText{}
+  \newcommand\nmt@BSP{Bachelor in Game Programmering}
+  \newcommand\nmt@BRD{Bachelor of Science in Network and System Administration}
+  \newcommand\nmt@BIS{Bachelor in Information Security}
+  \newcommand\nmt@BPU{Bachelor in Software Engineering}
+  \newcommand\nmt@BIND{Bachelor of Science in Engineering - Computer Science} 
+  \newcommand\nmt@AuthorText{Author(s)}
+	\newcommand\nmt@SupervisorText{Supervisor(s)}
+	
+
 
 \DeclareOption{norsk}{
+	\renewcommand\nmt@DepartmentNameText{%
+	   Avdeling for informatikk og medieteknikk\\
+	 	\NTNUno, 
+	}
+	\renewcommand\nmt@BSP{Bachelor i spillprogrammering}
+  \renewcommand\nmt@BRD{Bachelor i drift av nettverk og datasystemer}
+  \renewcommand\nmt@BIS{Bachelor i informasjonssikkerhet}
+  \renewcommand\nmt@BPU{Bachelor i programvareutvikling}
+  \renewcommand\nmt@BIND{Bachelor i Ingeniør - data} 
+
+  \renewcommand\nmt@AuthorText{Forfattere}
+	\renewcommand\nmt@SupervisorText{Veileder}
+
    \@norsktrue 
    \@nynorskfalse 
    \@englishfalse
@@ -394,86 +422,63 @@ Use $\backslash$useyear\{<year>\} to set year.
    \@norskfalse
 }
 
-\DeclareOption{english}{
+\DeclareOption{nynorsk}{
+	\renewcommand\nmt@DepartmentNameText{%
+	   Avdeling for informatikk og medieteknikk\\
+	 	\NTNUno, 
+	}
+	\renewcommand\nmt@BSP{Bachelor i spillprogrammering}
+  \renewcommand\nmt@BRD{Bachelor i drift av nettverk og datasystemer}
+  \renewcommand\nmt@BIS{Bachelor i informasjonssikkerhet}
+  \renewcommand\nmt@BPU{Bachelor i programvareutvikling}
+  \renewcommand\nmt@BIND{Bachelor i Ingeniør - data} 
+
+  \renewcommand\nmt@AuthorText{Forfattere}
+	\renewcommand\nmt@SupervisorText{Veileder}
+
    \@englishfalse 
    \@nynorsktrue
    \@norskfalse
 }
 
-	\newcommand\nmt@CollegeNameText{%
-		Department of Computer Science and Media Technology\\
-		\NTNU, 
-	}
+
 	
- \if@norsk
-	\renewcommand\nmt@CollegeNameText{%
-	  	Avdeling for informatikk og medieteknikk\\
-	 	\NTNUno, 
-	}  
-\fi
 
 \DeclareOption{BSP}{%
-  \renewcommand\nmt@firstpagetext{%
-    \begin{tabular}{c}
-    	Bachelor i Spill Programmering\\
-    	20 ECTS\\
-    	Avdeling for informatikk og medieteknikk\\
-    	\NTNUno,\\
-    \end{tabular}
-  }
-  \renewcommand\nmt@secondpagetext{\thesis@publishertext}
-}
+  \renewcommand\nmt@DegreeNameText{%
+    	\nmt@BSP
+			}
+			}
 
-\DeclareOption{BRD}{%
-  \renewcommand\nmt@firstpagetext{%
-    \begin{tabular}{c}
-    	Bachelor i drift av nettverk  og datasystemer \\
-    	20 ECTS\\
-    	Avdeling for informatikk og medieteknikk\\
-    	\NTNUno, \\
-    \end{tabular}
-  }
-  \renewcommand\nmt@secondpagetext{\thesis@publishertext}
-}
+\DeclareOption{BRD}{%  
+\renewcommand\nmt@DegreeNameText{%
+    	\nmt@BRD
+			}}
 
 \DeclareOption{BIND}{%
-  \renewcommand\nmt@firstpagetext{%
-    \begin{tabular}{c}
-    	Bachelor i ingeniørfag – data \\
-    	20 ECTS\\
-    	Avdeling for informatikk og medieteknikk\\
-    	\NTNUno \\
-    \end{tabular}
-  }
-  \renewcommand\nmt@secondpagetext{\thesis@publishertext}
-}
-
+  \renewcommand\nmt@DegreeNameText{%
+    	\nmt@BIND
+			}}
+			
 \DeclareOption{BIS}{%
-  \renewcommand\nmt@firstpagetext{%
-    \begin{tabular}{c}
-    	Bachelor i informasjonssikkerhet \\
-    	20 ECTS\\
-    	Avdeling for informatikk og medieteknikk\\
-    	\NTNUno\\
-    \end{tabular}
-  }
-  \renewcommand\nmt@secondpagetext{\thesis@publishertext}
-}
+  \renewcommand\nmt@DegreeNameText{%
+    	\nmt@BIS
+			}}
 
 \DeclareOption{BPU}{%
 
-  \renewcommand\nmt@firstpagetext{%
-    \begin{tabular}{c}
-    	Bachelor i programvareutvikling \\
-    	20 ECTS\\
-    	Avdeling for informatikk og medieteknikk\\
-    	\NTNUno\\
-    \end{tabular}
-  }
-  \renewcommand\nmt@secondpagetext{\thesis@publishertext}
+  \renewcommand\nmt@DegreeNameText{%
+    	\nmt@BPU
+			}
 }
 
-
+  \renewcommand\nmt@firstpagetext{%
+    \begin{tabular}{c}
+    	\nmt@DegreeNameText\\
+    	20 ECTS\\
+    	\nmt@DepartmentNameText\\
+    \end{tabular}
+  }
 
 \ProcessOptions\relax
 
@@ -507,7 +512,7 @@ Use $\backslash$useyear\{<year>\} to set year.
 {\large
 	\lineskip .75em%
    \fontsize{14}{16}\selectfont{ 
-   FORFATTERE:}\\
+     \nmt@AuthorText}\\
    \begin{tabular}[10cm]{p{1.5cm}l}%
           \rule[-4cm]{0cm}{4cm}&{\fontsize{14}{16}\selectfont 
           \parbox{6cm}{
@@ -529,8 +534,9 @@ Use $\backslash$useyear\{<year>\} to set year.
 	\end{center}%
 	
 	\vspace*{\fill}
-	{\fontsize{14}{16}\selectfont	
-	Veiledere:  
+	{\fontsize{14}{16}\selectfont{	
+	\nmt@SupervisorText
+  }
 	\hspace*{21.5mm}{	\thesis@supervisor\\
 		 \thesis@supervisorA\\ \par}}
 		
@@ -575,7 +581,7 @@ Use $\backslash$useyear\{<year>\} to set year.
   
   \newpage
   {%
-    \fontsize{20}{24}\selectfont 
+    \fontsize{14}{16}\selectfont 
     Summary of Graduate Project\\
 	\par}
 %\addcontentsline{toc}{chapter}{Summary}
@@ -585,7 +591,7 @@ Use $\backslash$useyear\{<year>\} to set year.
 		&\\
 	Date: & \nmt@frontpagesyear\\
 		&\\
-	Participants: & \thesis@author\\
+	Authors: & \thesis@author\\
 		& \thesis@authorA\\
 		& \thesis@authorB\\
 		& \thesis@authorC\\
