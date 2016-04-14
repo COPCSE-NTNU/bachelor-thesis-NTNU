@@ -82,6 +82,7 @@
 % Header and footer
 
 \def\thesis@title{Use thesistitle to insert your title here.}
+\def\thesis@shorttitle{Use thesisshorttitle to insert your shorttitle here.}
 \def\thesis@date{Use thesisdate to insert your date here.}
 \def\thesis@author{Use thesisauthor to insert your name here.}
 \def\thesis@hostInstitution{Use thesisHostInstitution to insert the location of the defense.}
@@ -110,7 +111,8 @@
 \def\nmt@pagecount{}
 \def\nmt@contact{}
 
-\def\thesistitle#1{\def\thesis@title{#1}}
+\def\thesistitle#1{\def\thesis@title{#1} \def\thesis@shorttitle{#1}}
+\def\thesisshorttitle#1{\def\thesis@shorttitle{#1}}
 \def\thesisdate#1{\def\thesis@date{#1}}
 \def\thesisauthor#1{\def\thesis@author{#1}}
 \def\thesisauthorA#1{\def\thesis@authorA{#1}}
@@ -141,9 +143,9 @@
 \def\ps@ntnuheadings{%
   \def\@oddfoot{\reset@font\hfil\thepage\hfil}
   \def\@oddhead{\underline{\hbox
-      to\hsize{\fontsize{7}{9}\selectfont\hfil\thesis@title}}}
+      to\hsize{\fontsize{7}{9}\selectfont\hfil\thesis@shorttitle}}}
   \def\@evenhead{\underline{\hbox
-      to\hsize{\fontsize{7}{9}\selectfont\thesis@title\hfil}}}
+      to\hsize{\fontsize{7}{9}\selectfont\thesis@shorttitle\hfil}}}
   \let\@evenfoot=\@oddfoot}
 
 \pagestyle{ntnuheadings}
