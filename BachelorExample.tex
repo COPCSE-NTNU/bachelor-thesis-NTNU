@@ -6,8 +6,8 @@
 %%  ``BRD'' Bachelor i drift av nettverk og datasystemer,\\
 %%  ``BIS'' Bachelor i Informasjonssikkerhet,\\
 %%  ``BPU'' Bachelor i Programvareutvikling, \\
-%%  ``BIND'' Bachelor i Ingeni�rfad - data. 
-\documentclass[BSP,english,oneside]{ntnubachelorthesis}
+%%  ``BIND'' Bachelor i Ingeniorfad - data. 
+\documentclass[BSP,english,oneside]{ntnuthesis/ntnubachelorthesis}
 
 \usepackage{csvsimple}
 \usepackage{booktabs}
@@ -45,11 +45,11 @@
 
 \begin{document}
 
-\input{BachelorThesisData} % this is the file which contains all the details about your thesis
+\input{inc/BachelorThesisData} % this is the file which contains all the details about your thesis
 
 \makefrontpages % make the frontpages
 
-\input{bachelorIntro}
+\input{inc/preface}
 
 
 \tableofcontents
@@ -57,24 +57,24 @@
 \listoftables
 
 
-\input{introduction}
-\input{requirements}
-\input{technical}
-\input{process}
-\input{implementation}
-\input{deployment}
-\input{testing}
-\input{discussion}
-\input{conclusion}
+\input{inc/introduction}
+\input{inc/requirements}
+\input{inc/technical}
+\input{inc/process}
+\input{inc/implementation}
+\input{inc/deployment}
+\input{inc/testing}
+\input{inc/discussion}
+\input{inc/conclusion}
 
 
-\bibliographystyle{ntnubachelorthesis}
-\bibliography{BachelorExample}
+\bibliographystyle{ntnuthesis/ntnubachelorthesis}
+\bibliography{inc/BachelorExample}
 
 \appendix %after this line all chapters will have leters instead of numbers
 %\input{projectplan}
 %\input{gantt}
-\input{meetinglog}
+\input{inc/meetinglog}
 %\input{progressreviews}
 %\input{worklog}
 

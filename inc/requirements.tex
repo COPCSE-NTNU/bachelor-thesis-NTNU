@@ -62,7 +62,7 @@ document in accordance with standard \LaTeX\ behavior.
 
 \begin{figure}[tbp]  %t top, b bottom, p page | you can also use h to try to get the figure to appear at the current location
   \centering
-  \includegraphics[width=.5\textwidth]{example_fig}
+  \includegraphics[width=.5\textwidth]{images/example_fig}
   \caption[An example figure.]{An example figure. If the caption is
     shorter than one line, it is centered. If it goes over more than
     one line, it is left and right justified. Furthermore, it is
@@ -71,10 +71,24 @@ document in accordance with standard \LaTeX\ behavior.
   \label{fig:example1}
 \end{figure}
 
+\begin{figure}[tbp]  %t top, b bottom, p page | you can also use h to try to get the figure to appear at the current location
+  \centering
+  \includegraphics[width=.5\textwidth]{images/kart_student}
+  \caption[Map of NTNU Campuses]{The map shows the three main campuses of NTNU.}
+  \label{fig:mapNTNU}
+\end{figure}
+
 
 \begin{figure}[tbp]  %t top, b bottom, p page | you can also use h to try to get the figure to appear at the current location
   \centering
-  \include{gnuplotgraph1}
+  \includegraphics[width=.5\textwidth]{images/stylus}
+  \caption[Stylus]{A standard stylus}
+  \label{fig:stylus}
+\end{figure}
+
+\begin{figure}[tbp]  %t top, b bottom, p page | you can also use h to try to get the figure to appear at the current location
+  \centering
+  \include{images/gnuplotgraph1}
   \caption[An example graph.]{This is a gnuplot graph of $y=\sin(x)$. Notice how the \LaTeX{} fonts are preserved in the graph. This is done using gnuplot and the simple text file included in the sample template.}
   \label{fig:examplegnuplot}
 \end{figure}
@@ -96,7 +110,7 @@ document in accordance with standard \LaTeX\ behavior.
 
 \begin{figure}[tbp]
   \centering
-  \csvautobooktabular{ageiq.csv}
+  \csvautobooktabular{images/ageiq.csv}
   \caption{An example table using simplecsv.}
   \label{tab:examplecsv}
 \end{figure}
@@ -183,6 +197,6 @@ anthologies~\cite{Lancaster1985} and web publications~\cite{Meldon1997}
 like this.
 
 
-A particular bibliography style file for GUC named
+A particular bibliography style file for NTNU named
 \texttt{ntnubachelorthesis.bst} has been developed based upon the
 standard Bib\TeX\ \texttt{unsrt} style.

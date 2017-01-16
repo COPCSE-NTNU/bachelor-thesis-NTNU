@@ -24,9 +24,10 @@
 \xdef\ntnubachelorthesisversion{0.2}
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{ntnubachelorthesis}
-  [\ntnubachelorthesisdate\space
-   v\ntnubachelorthesisversion\space
+ [\ntnubachelorthesisdate\space
+  v\ntnubachelorthesisversion\space
    Creative Commons Attribution 2016 Simon McCallum and Ivar Farup ]
+
 
 %% CLASS FILE COMMANDS
 
@@ -384,7 +385,7 @@ Use $\backslash$useyear\{<year>\} to set year.
 \newif\if@english
 
 	\newcommand\nmt@DepartmentNameText{%
-		Department of Computer Science and Media Technology\\
+		Department of Computer Science\\
 		\NTNU, 
 	}
 	
@@ -401,14 +402,14 @@ Use $\backslash$useyear\{<year>\} to set year.
 
 \DeclareOption{norsk}{
 	\renewcommand\nmt@DepartmentNameText{%
-	   Avdeling for informatikk og medieteknikk\\
+	   Institute for Datateknikk og Informatikk\\
 	 	\NTNUno, 
 	}
 	\renewcommand\nmt@BSP{Bachelor i spillprogrammering}
   \renewcommand\nmt@BRD{Bachelor i drift av nettverk og datasystemer}
   \renewcommand\nmt@BIS{Bachelor i informasjonssikkerhet}
   \renewcommand\nmt@BPU{Bachelor i programvareutvikling}
-  \renewcommand\nmt@BIND{Bachelor i Ingeni\o{}r - data} 
+  \renewcommand\nmt@BIND{Bachelor i ingeni\o{}r - data} 
 
   \renewcommand\nmt@AuthorText{Forfattere}
 	\renewcommand\nmt@SupervisorText{Veileder}
@@ -426,7 +427,7 @@ Use $\backslash$useyear\{<year>\} to set year.
 
 \DeclareOption{nynorsk}{
 	\renewcommand\nmt@DepartmentNameText{%
-	   Avdeling for informatikk og medieteknikk\\
+	   Institute for datateknikk og informatikk\\
 	 	\NTNUno, 
 	}
 	\renewcommand\nmt@BSP{Bachelor i spillprogrammering}
@@ -506,7 +507,7 @@ Use $\backslash$useyear\{<year>\} to set year.
     \let\footnoterule\relax
     \let \footnote \thanks
     \null\vfil
-    \includegraphics[width=200pt]{hovedlogo_eng} \\    
+    \includegraphics[width=200pt]{ntnuthesis/hovedlogo_eng} \\    
     \vskip 75\p@
     \begin{center}%
       {\fontsize{22}{25}\selectfont \thesis@title}%
