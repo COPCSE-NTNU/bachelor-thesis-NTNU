@@ -23,7 +23,7 @@
 \xdef\ntnubachelorthesisdate{2017/01/16}
 \xdef\ntnubachelorthesisversion{0.2}
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{ntnubachelorthesis}
+\ProvidesClass{ntnuthesis/ntnubachelorthesis}
  [\ntnubachelorthesisdate\space
   v\ntnubachelorthesisversion\space
    Creative Commons Attribution 2016 Simon McCallum and Ivar Farup ]
