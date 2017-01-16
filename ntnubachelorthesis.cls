@@ -20,8 +20,8 @@
 
 %% IDENTIFICATION
 
-\xdef\ntnubachelorthesisdate{2016/01/11}
-\xdef\ntnubachelorthesisversion{0.1}
+\xdef\ntnubachelorthesisdate{2017/01/16}
+\xdef\ntnubachelorthesisversion{0.2}
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{ntnubachelorthesis}
   [\ntnubachelorthesisdate\space
@@ -355,7 +355,7 @@ Use $\backslash$useyear\{<year>\} to set year.
   ``BRD'' Bachelor i drift av nettverk og datasystemer,\\
   ``BIS'' Bachelor i Informasjonssikkerhet,\\
   ``BPU'' Bachelor i Programvareutvikling, \\
-  ``BIND'' Bachelor i Ingeniørfad - data. 
+  ``BIND'' Bachelor i Ingeni\o{}rfag - data. 
 }
 
 \newcommand\nmt@secondpagetext{%
@@ -364,7 +364,7 @@ Use $\backslash$useyear\{<year>\} to set year.
   ``BRD'' Bachelor i drift av nettverk og datasystemer,\\
   ``BIS'' Bachelor i Informasjonssikkerhet,\\
   ``BPU'' Bachelor i Programvareutvikling, \\
-  ``BIND'' Bachelor i Ingeniør. 
+  ``BIND'' Bachelor i Ingeni\o{}rfag. 
 }
 
 	    
@@ -408,7 +408,7 @@ Use $\backslash$useyear\{<year>\} to set year.
   \renewcommand\nmt@BRD{Bachelor i drift av nettverk og datasystemer}
   \renewcommand\nmt@BIS{Bachelor i informasjonssikkerhet}
   \renewcommand\nmt@BPU{Bachelor i programvareutvikling}
-  \renewcommand\nmt@BIND{Bachelor i Ingeniør - data} 
+  \renewcommand\nmt@BIND{Bachelor i Ingeni\o{}r - data} 
 
   \renewcommand\nmt@AuthorText{Forfattere}
 	\renewcommand\nmt@SupervisorText{Veileder}
@@ -433,7 +433,7 @@ Use $\backslash$useyear\{<year>\} to set year.
   \renewcommand\nmt@BRD{Bachelor i drift av nettverk og datasystemer}
   \renewcommand\nmt@BIS{Bachelor i informasjonssikkerhet}
   \renewcommand\nmt@BPU{Bachelor i programvareutvikling}
-  \renewcommand\nmt@BIND{Bachelor i Ingeniør - data} 
+  \renewcommand\nmt@BIND{Bachelor i Ingeni\o{}r - data} 
 
   \renewcommand\nmt@AuthorText{Forfattere}
 	\renewcommand\nmt@SupervisorText{Veileder}
