@@ -356,7 +356,10 @@ Use $\backslash$useyear\{<year>\} to set year.
   ``BRD'' Bachelor i drift av nettverk og datasystemer,\\
   ``BIS'' Bachelor i Informasjonssikkerhet,\\
   ``BPU'' Bachelor i Programvareutvikling, \\
-  ``BIND'' Bachelor i Ingeni\o{}rfag - data. 
+  ``BIND'' Bachelor i Ingeni\o{}rfag - data, \\
+  ``BADR'' Bachelor i drift av datasystemer, \\
+  ``BIT'' Bachelor i informatikk, \\
+  ``BABED'' Bachelor i IT-støttet bedriftsutvikling.
 }
 
 \newcommand\nmt@secondpagetext{%
@@ -365,7 +368,10 @@ Use $\backslash$useyear\{<year>\} to set year.
   ``BRD'' Bachelor i drift av nettverk og datasystemer,\\
   ``BIS'' Bachelor i Informasjonssikkerhet,\\
   ``BPU'' Bachelor i Programvareutvikling, \\
-  ``BIND'' Bachelor i Ingeni\o{}rfag. 
+  ``BIND'' Bachelor i Ingeni\o{}rfag, \\
+  ``BADR'' Bachelor i drift av datasystemer, \\
+  ``BIT'' Bachelor i informatikk, \\
+  ``BABED'' Bachelor i IT-støttet bedriftsutvikling.
 }
 
 	    
@@ -394,7 +400,10 @@ Use $\backslash$useyear\{<year>\} to set year.
   \newcommand\nmt@BRD{Bachelor of Science in Network and System Administration}
   \newcommand\nmt@BIS{Bachelor in Information Security}
   \newcommand\nmt@BPU{Bachelor in Software Engineering}
-  \newcommand\nmt@BIND{Bachelor of Science in Engineering - Computer Science} 
+  \newcommand\nmt@BIND{Bachelor of Science in Engineering - Computer Science}
+  \newcommand\nmt@BADR{Bachelor in Information Technology\\with specialization in Network administration}
+  \newcommand\nmt@BIT{Bachelor in Information Technology}
+  \newcommand\nmt@BABED{IT-supported Business Architecture}
   \newcommand\nmt@AuthorText{Author(s)}
 	\newcommand\nmt@SupervisorText{Supervisor(s)}
 	
@@ -409,7 +418,10 @@ Use $\backslash$useyear\{<year>\} to set year.
   \renewcommand\nmt@BRD{Bachelor i drift av nettverk og datasystemer}
   \renewcommand\nmt@BIS{Bachelor i informasjonssikkerhet}
   \renewcommand\nmt@BPU{Bachelor i programvareutvikling}
-  \renewcommand\nmt@BIND{Bachelor i ingeni\o{}r - data} 
+  \renewcommand\nmt@BIND{Bachelor i ingeni\o{}r - data}
+  \renewcommand\nmt@BADR{Bachelor i informatikk med spesialisering i drift av datasystemer}
+  \renewcommand\nmt@BIT{Bachelor i informatikk}
+  \renewcommand\nmt@BABED{Bachelor i IT-støttet bedriftsutvikling}
 
   \renewcommand\nmt@AuthorText{Forfattere}
 	\renewcommand\nmt@SupervisorText{Veileder}
@@ -434,7 +446,10 @@ Use $\backslash$useyear\{<year>\} to set year.
   \renewcommand\nmt@BRD{Bachelor i drift av nettverk og datasystemer}
   \renewcommand\nmt@BIS{Bachelor i informasjonssikkerhet}
   \renewcommand\nmt@BPU{Bachelor i programvareutvikling}
-  \renewcommand\nmt@BIND{Bachelor i Ingeni\o{}r - data} 
+  \renewcommand\nmt@BIND{Bachelor i Ingeni\o{}r - data}
+  \renewcommand\nmt@BADR{Bachelor i informatikk med spesialisering i drift av datasystemer}
+  \renewcommand\nmt@BIT{Bachelor i informatikk}
+  \renewcommand\nmt@BABED{Bachelor i IT-støttet bedriftsutvikling}
 
   \renewcommand\nmt@AuthorText{Forfattere}
 	\renewcommand\nmt@SupervisorText{Veileder}
@@ -473,6 +488,24 @@ Use $\backslash$useyear\{<year>\} to set year.
   \renewcommand\nmt@DegreeNameText{%
     	\nmt@BPU
 			}
+}
+
+\DeclareOption{BADR}{%
+  \renewcommand\nmt@DegreeNameText{%
+        \nmt@BADR
+            }
+}
+
+\DeclareOption{BIT}{%
+    \renewcommand\nmt@DegreeNameText{%
+        \nmt@BIT
+            }
+}
+
+\DeclareOption{BABED}{%
+    \renewcommand\nmt@DegreeNameText{%
+        \nmt@BABED
+            }
 }
 
   \renewcommand\nmt@firstpagetext{%
