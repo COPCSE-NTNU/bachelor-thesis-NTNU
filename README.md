@@ -8,3 +8,9 @@ You should not change anything in the ntnuthesis folder.  That contains the stru
 You should edit the files in the inc\ folder.  You can also add files in the images\ folder.  The BachelorThesis.tex file should also be changed to include any other folders. 
 
 If you are using [**sharelatex**](http://www.sharelatex.com) then you should use the **New Project** -> **Import from GitHUB** that way you will have the repository in both sharelatex and on your own version on github.
+
+To add personal information you need to edit:
+```
+inc/BachelorThesisDate.tex
+```
+This is where the information for the front material is set.
