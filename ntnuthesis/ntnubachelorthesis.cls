@@ -390,10 +390,15 @@ Use $\backslash$useyear\{<year>\} to set year.
 \newif\if@nynorsk
 \newif\if@english
 
-	\newcommand\nmt@DepartmentNameText{%
+	\newcommand\nmt@DepartmentNameText{}
+	\newcommand\nmt@IDI{
 		Department of Computer Science\\
 		\NTNU, 
-	}
+		}
+	\newcommand\nmt@IIK{
+			Department of Information Security and Communication Technology\\
+		\NTNU, 
+		}
 	
 	\newcommand\nmt@DegreeNameText{}
   \newcommand\nmt@BSP{Bachelor in Game Programmering}
@@ -411,10 +416,17 @@ Use $\backslash$useyear\{<year>\} to set year.
 
 
 \DeclareOption{norsk}{
-	\renewcommand\nmt@DepartmentNameText{%
+	
+	\renewcommand\nmt@IDI{%
 	   Institute for Datateknikk og Informatikk\\
 	 	\NTNUno, 
 	}
+	\renewcommand\nmt@IIK{
+			Institutt for informasjonssikkerhet og kommunikasjonsteknologi\\
+		\NTNUno, 
+		}	
+	
+	
   \renewcommand\nmt@BSP{Bachelor i spillprogrammering}
   \renewcommand\nmt@BPROG{Bachelor i programmering[spill|apps]}
   \renewcommand\nmt@BRD{Bachelor i drift av nettverk og datasystemer}
@@ -465,53 +477,83 @@ Use $\backslash$useyear\{<year>\} to set year.
 	
 
 \DeclareOption{BSP}{%
+  \renewcommand\nmt@DepartmentNameText{%
+    	\nmt@IDI
+			}
   \renewcommand\nmt@DegreeNameText{%
     	\nmt@BSP
 			}
+
+
 			}
 
 \DeclareOption{BPROG}{%
-  \renewcommand\nmt@DegreeNameText{%
+  \renewcommand\nmt@DepartmentNameText{%
+    	\nmt@IDI
+			}
+	\renewcommand\nmt@DegreeNameText{%
     	\nmt@BPROG
 			}
+			
 			}
 
 \DeclareOption{BRD}{%  
-\renewcommand\nmt@DegreeNameText{%
+  \renewcommand\nmt@DepartmentNameText{%
+    	\nmt@IIK
+			}
+	\renewcommand\nmt@DegreeNameText{%
     	\nmt@BRD
 			}}
 
 \DeclareOption{BIND}{%
-  \renewcommand\nmt@DegreeNameText{%
+  \renewcommand\nmt@DepartmentNameText{%
+    	\nmt@IDI
+			}
+	\renewcommand\nmt@DegreeNameText{%
     	\nmt@BIND
 			}}
 			
 \DeclareOption{BIS}{%
-  \renewcommand\nmt@DegreeNameText{%
+  \renewcommand\nmt@DepartmentNameText{%
+    	\nmt@IIK
+			}
+	\renewcommand\nmt@DegreeNameText{%
     	\nmt@BIS
 			}}
 
 \DeclareOption{BPU}{%
 
-  \renewcommand\nmt@DegreeNameText{%
+  \renewcommand\nmt@DepartmentNameText{%
+    	\nmt@IDI
+			}
+	\renewcommand\nmt@DegreeNameText{%
     	\nmt@BPU
 			}
 }
 
 \DeclareOption{BADR}{%
-  \renewcommand\nmt@DegreeNameText{%
+  \renewcommand\nmt@DepartmentNameText{%
+    	\nmt@IIK
+			}
+	\renewcommand\nmt@DegreeNameText{%
         \nmt@BADR
             }
 }
 
 \DeclareOption{BIT}{%
-    \renewcommand\nmt@DegreeNameText{%
+    \renewcommand\nmt@DepartmentNameText{%
+    	\nmt@IDI
+			}
+	\renewcommand\nmt@DegreeNameText{%
         \nmt@BIT
             }
 }
 
 \DeclareOption{BABED}{%
-    \renewcommand\nmt@DegreeNameText{%
+    \renewcommand\nmt@DepartmentNameText{%
+    	\nmt@IIK
+			}
+	\renewcommand\nmt@DegreeNameText{%
         \nmt@BABED
             }
 }
