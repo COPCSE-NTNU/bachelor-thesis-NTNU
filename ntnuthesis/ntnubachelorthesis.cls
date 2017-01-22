@@ -15,7 +15,7 @@
 \newcommand{\NTNU}{{N}orwegian {U}niversity of {S}cience and {T}echnology} %the extra {'s protect upper case
 \newcommand{\NTNUno}{{N}orges teknisk-naturvitenskapelige universitet} 
 \newcommand{\NTNUgjovik}{{NTNU} i {G}j\o{}vik}
-\newcommand{\NTNUalesund}{{NTNU} i \AAlesund}
+\newcommand{\NTNUalesund}{{NTNU} i \AA{}lesund}
 
 
 %% IDENTIFICATION
@@ -397,6 +397,7 @@ Use $\backslash$useyear\{<year>\} to set year.
 	
 	\newcommand\nmt@DegreeNameText{}
   \newcommand\nmt@BSP{Bachelor in Game Programmering}
+  \newcommand\nmt@BPROG{Bachelor in Programmering [Games|Applications]}
   \newcommand\nmt@BRD{Bachelor of Science in Network and System Administration}
   \newcommand\nmt@BIS{Bachelor in Information Security}
   \newcommand\nmt@BPU{Bachelor in Software Engineering}
@@ -414,7 +415,8 @@ Use $\backslash$useyear\{<year>\} to set year.
 	   Institute for Datateknikk og Informatikk\\
 	 	\NTNUno, 
 	}
-	\renewcommand\nmt@BSP{Bachelor i spillprogrammering}
+  \renewcommand\nmt@BSP{Bachelor i spillprogrammering}
+  \renewcommand\nmt@BPROG{Bachelor i programmering[spill|apps]}
   \renewcommand\nmt@BRD{Bachelor i drift av nettverk og datasystemer}
   \renewcommand\nmt@BIS{Bachelor i informasjonssikkerhet}
   \renewcommand\nmt@BPU{Bachelor i programvareutvikling}
@@ -465,6 +467,12 @@ Use $\backslash$useyear\{<year>\} to set year.
 \DeclareOption{BSP}{%
   \renewcommand\nmt@DegreeNameText{%
     	\nmt@BSP
+			}
+			}
+
+\DeclareOption{BPROG}{%
+  \renewcommand\nmt@DegreeNameText{%
+    	\nmt@BPROG
 			}
 			}
 
