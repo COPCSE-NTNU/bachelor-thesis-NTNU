@@ -42,8 +42,12 @@
 \RequirePackage{lastpage}
 \RequirePackage{babel}
 \RequirePackage{enumitem}
+\RequirePackage{listings}
+
 \RequirePackage[utf8]{inputenc}     % For utf8 encoded .tex files  % For cross references in pdf
-\RequirePackage[pdftex]{graphicx, hyperref} 
+%\RequirePackage[pdftex]{graphicx, hyperref}
+\RequirePackage{graphicx}
+\RequirePackage{hyperref}
 \RequirePackage{color}              % For colouring text  
 
 \hypersetup{colorlinks=true,     
