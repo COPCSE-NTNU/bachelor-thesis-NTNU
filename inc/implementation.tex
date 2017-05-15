@@ -5,16 +5,12 @@ This has the description of how you actually went about implementing the project
 \todo{add more here. if you are reading this you can see that I am using todo as a way to indicate where the updates should be}
 
 
-For code listing (see Figure~\ref{fig:HelloWorldC++} and Figure~\ref{fig:PythonCode}) we have included the listings package so that you can easily include formatted code.  It does not have code highlighting but it retains the structure of the code.  For more documentation on listings on wikibooks \footnote{\url{https://en.wikibooks.org/wiki/LaTeX/Source_Code_Listings}}
+For code listing (see Listing~\ref{fig:HelloWorldC++} or you can call them figures if you want to see Figure~\ref{fig:PythonCode}) we have included the listings package so that you can easily include formatted code.  It does not have code highlighting but it retains the structure of the code.  For more documentation on listings on wikibooks \footnote{\url{https://en.wikibooks.org/wiki/LaTeX/Source_Code_Listings}}
 
 
 
 
-\begin{figure}[tp] 
-  \centering
-\lstset{language=C++,
-        morecomment=[l][\color{darkgreen}]{\#}}
-\begin{lstlisting}
+\begin{lstlisting}[language=C++, caption= {Hello World C++ The code listing for Hello World in C++, with colour syntax highlighting.}, label={fig:HelloWorldC++}]
     #include<stdio.h>
     #include<iostream>
     // A comment
@@ -25,14 +21,9 @@ For code listing (see Figure~\ref{fig:HelloWorldC++} and Figure~\ref{fig:PythonC
     }
 \end{lstlisting}
 
-  \caption[Hello World C++]{The code listing for Hello World in C++, with colour syntax highlighting.}
-  \label{fig:HelloWorldC++}
-\end{figure}
-
 You could also use Python code listings by changing the language of the code block
 
-\begin{figure}[tp] 
-
+\begin{figure}[th] 
   \centering
 \lstset{language=Python}
 \begin{lstlisting}

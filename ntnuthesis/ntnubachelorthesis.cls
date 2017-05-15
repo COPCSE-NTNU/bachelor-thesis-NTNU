@@ -416,7 +416,7 @@ Use $\backslash$useyear\{<year>\} to set year.
   \newcommand\nmt@BABED{IT-supported Business Architecture}
   \newcommand\nmt@AuthorText{Author(s)}
 	\newcommand\nmt@SupervisorText{Supervisor(s)}
-	
+\newcommand\thesis@titlehead{\thesis@title}	
 
 
 \DeclareOption{norsk}{
@@ -443,6 +443,8 @@ Use $\backslash$useyear\{<year>\} to set year.
 
   \renewcommand\nmt@AuthorText{Forfattere}
 	\renewcommand\nmt@SupervisorText{Veileder}
+	
+	\renewcommand\thesis@titlehead{\thesis@titleNOR}
 
    \@norsktrue 
    \@nynorskfalse 
@@ -597,7 +599,7 @@ Use $\backslash$useyear\{<year>\} to set year.
     \includegraphics[width=200pt]{ntnuthesis/hovedlogo_eng} \\    
     \vskip 75\p@
     \begin{center}%
-      {\fontsize{22}{25}\selectfont \thesis@title}%
+      {\fontsize{22}{25}\selectfont \thesis@titlehead}%
 \vskip 3em%
 {\large
 	\lineskip .75em%

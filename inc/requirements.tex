@@ -60,7 +60,7 @@ Tables are placed in the \texttt{table} environment. An example is given in
 Table~\ref{tab:example1}. Figures and tables float freely around in the
 document in accordance with standard \LaTeX\ behavior.
 
-\begin{figure}[tbp]  %t top, b bottom, p page | you can also use h to try to get the figure to appear at the current location
+\begin{figure}[htbp]  %t top, b bottom, p page | you can also use h to try to get the figure to appear at the current location
   \centering
   \includegraphics[width=.5\textwidth]{images/example_fig}
   \caption[An example figure.]{An example figure. If the caption is
@@ -71,7 +71,7 @@ document in accordance with standard \LaTeX\ behavior.
   \label{fig:example1}
 \end{figure}
 
-\begin{figure}[tbp]  %t top, b bottom, p page | you can also use h to try to get the figure to appear at the current location
+\begin{figure}[htbp]  %t top, b bottom, p page | you can also use h to try to get the figure to appear at the current location
   \centering
   \includegraphics[width=.5\textwidth]{images/kart_student}
   \caption[Map of NTNU Campuses]{The map shows the three main campuses of NTNU.}
@@ -79,19 +79,14 @@ document in accordance with standard \LaTeX\ behavior.
 \end{figure}
 
 
-\begin{figure}[tbp]  %t top, b bottom, p page | you can also use h to try to get the figure to appear at the current location
+\begin{figure}[htbp]  %t top, b bottom, p page | you can also use h to try to get the figure to appear at the current location
   \centering
   \includegraphics[width=.5\textwidth]{images/stylus}
   \caption[Stylus]{A standard stylus}
   \label{fig:stylus}
 \end{figure}
 
-\begin{figure}[tbp]  %t top, b bottom, p page | you can also use h to try to get the figure to appear at the current location
-  \centering
-  \include{images/gnuplotgraph1}
-  \caption[An example graph.]{This is a gnuplot graph of $y=\sin(x)$. Notice how the \LaTeX{} fonts are preserved in the graph. This is done using gnuplot and the simple text file included in the sample template.}
-  \label{fig:examplegnuplot}
-\end{figure}
+
 
 \begin{table}[tbp]
   \centering

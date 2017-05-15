@@ -12,10 +12,13 @@
 %%  ``BABED'' Bachelor i IT-støttet bedriftsutvikling.
 %%   for example \documentclass[BIS,norsk,twoside]{ntnuthesis/ntnubachelorthesis}
 
-\documentclass[BSP,english,oneside]{ntnuthesis/ntnubachelorthesis}
+\documentclass[BIND,norsk,oneside]{ntnuthesis/ntnubachelorthesis}
 
 \usepackage{csvsimple}
 \usepackage{booktabs}
+
+\usepackage{gnuplottex}
+
 
 \definecolor{darkgreen}{rgb}{0,0.5,0}
 \definecolor{darkred}{rgb}{0.5,0.0,0}
@@ -26,7 +29,13 @@
                 commentstyle=\color{darkgreen}\ttfamily,
 }
 
-\newcommand{\comment}[1]{\textcolor{blue}{\emph{#1}}}  %% use of the colour and you can see how to use commands with parts \comment{so what}
+
+%Typesetting of C++
+\newcommand{\CPP}[0]{{C\nolinebreak[4]\hspace{-.1em}\raisebox{.1ex}{\small\bf +\hspace{-.1em}+\ }}}
+
+
+
+%\newcommand{\comment}[1]{\textcolor{blue}{\emph{#1}}}  %% use of the colour and you can see how to use commands with parts \comment{so what}
 
 %% The class files defines these two
 %% \newcommand{\NTNU}{Norwegian University for Science and Technology} %
@@ -71,6 +80,7 @@
 \tableofcontents
 \listoffigures
 \listoftables
+\lstlistoflistings
 
 
 \input{inc/introduction}
