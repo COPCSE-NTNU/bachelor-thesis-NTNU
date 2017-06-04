@@ -539,7 +539,7 @@ Use $\backslash$useyear\{<year>\} to set year.
 
 \DeclareOption{BADR}{%
   \renewcommand\nmt@DepartmentNameText{%
-    	\nmt@IIK
+    	\nmt@IDI
 			}
 	\renewcommand\nmt@DegreeNameText{%
         \nmt@BADR
@@ -557,7 +557,7 @@ Use $\backslash$useyear\{<year>\} to set year.
 
 \DeclareOption{BABED}{%
     \renewcommand\nmt@DepartmentNameText{%
-    	\nmt@IIK
+    	\nmt@IDI
 			}
 	\renewcommand\nmt@DegreeNameText{%
         \nmt@BABED
