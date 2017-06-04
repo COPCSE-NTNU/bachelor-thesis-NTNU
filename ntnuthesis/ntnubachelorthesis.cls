@@ -98,9 +98,16 @@
 \def\thesis@authorB{}
 \def\thesis@authorC{}
 \def\thesis@authorD{}
+
 \def\thesis@supervisor{}
 \def\thesis@supervisorA{}
 \def\thesis@oppdragsgiver{}
+
+\def\thesis@oppgaveNo{}
+
+\newif\if@firstnamea    \@firstnameafalse
+\def\firstnamea#1{\gdef\@firstnamea{#1} \@firstnameatrue }
+
 
 \def\nmt@keywords{}
 \def\nmt@desc{}
@@ -120,13 +127,18 @@
 \def\thesisshorttitle#1{\def\thesis@shorttitle{#1}}
 \def\thesisdate#1{\def\thesis@date{#1}}
 \def\thesisauthor#1{\def\thesis@author{#1}}
-\def\thesisauthorA#1{\def\thesis@authorA{#1}}
-\def\thesisauthorB#1{\def\thesis@authorB{#1}}
-\def\thesisauthorC#1{\def\thesis@authorC{#1}}
-\def\thesisauthorD#1{\def\thesis@authorD{#1}}
+\newif\if@thesisauthorA    \@thesisauthorAfalse
+\def\thesisauthorA#1{\def\thesis@authorA{#1} \@thesisauthorAtrue}
+\newif\if@thesisauthorB    \@thesisauthorBfalse
+\def\thesisauthorB#1{\def\thesis@authorB{#1} \@thesisauthorBtrue}
+\newif\if@thesisauthorC    \@thesisauthorCfalse
+\def\thesisauthorC#1{\def\thesis@authorC{#1} \@thesisauthorCtrue}
+\newif\if@thesisauthorD    \@thesisauthorDfalse
+\def\thesisauthorD#1{\def\thesis@authorD{#1} \@thesisauthorDtrue}
 \def\thesissupervisor#1{\def\thesis@supervisor{#1}}
 \def\thesissupervisorA#1{\def\thesis@supervisorA{#1}}
 \def\nmtoppdragsgiver#1{\def\thesis@oppdragsgiver{#1}}
+\def\thesisOppgaveNo#1{\def\thesis@OppgaveNo{#1} \thesis@OppgaveNotrue}
 
 \def\thesisHostInstitution#1{\def\thesis@hostInstitution{#1}}
 \def\thesisPublisherText#1{\def\thesis@publishertext{#1}}
@@ -599,22 +611,24 @@ Use $\backslash$useyear\{<year>\} to set year.
     \includegraphics[width=200pt]{ntnuthesis/hovedlogo_eng} \\    
     \vskip 75\p@
     \begin{center}%
-      {\fontsize{22}{25}\selectfont \thesis@titlehead}%
-\vskip 3em%
-{\large
-	\lineskip .75em%
-   \fontsize{14}{16}\selectfont{ 
-     \nmt@AuthorText}\\
-   \begin{tabular}[10cm]{p{1.5cm}l}%
-          \rule[-4cm]{0cm}{4cm}&{\fontsize{14}{16}\selectfont 
-          \parbox{6cm}{
-					\thesis@author \\
-          \thesis@authorA \\
-          \thesis@authorB \\
-          \thesis@authorC \\
- %         \thesis@authorD \\
-          } 
-          \par}
+        { \fontsize{22}{25}
+            \selectfont \thesis@titlehead}%
+            \vskip 3em%
+            {\large
+	            \lineskip .75em%
+                \fontsize{14}{16}
+                \selectfont{ 
+                    \nmt@AuthorText}\\
+                    \begin{tabular}[10cm]{p{1.5cm}l}%
+                    \rule[-4cm]{0cm}{4cm} & {\fontsize{14}{16}\selectfont 
+                        \parbox{6cm}{
+		                \thesis@author \\
+                        \thesis@authorA \\
+                         \thesis@authorB \\
+                        \thesis@authorC \\
+                       \thesis@authorD \\
+                    } 
+                \par}
         \end{tabular}\par}
 	\vskip 1em
 	\fontsize{14}{16} \selectfont{
@@ -646,12 +660,14 @@ Use $\backslash$useyear\{<year>\} to set year.
 \begin{tabular}{p{0.35\textwidth}@{  }p{0.65\textwidth}}
 	Tittel: & \textbf{\thesis@titleNOR}\\
 		&\\
+%	Oppgave nr.:   &	\thesis@OppgaveNo\\
 	Dato: & \nmt@frontpagesyear\\
 		&\\
 	Deltakere: & \thesis@author\\
-		& \thesis@authorA\\
-		& \thesis@authorB\\
-		& \thesis@authorC\\
+		\if@thesisauthorA & \thesis@authorA\\ \fi
+		\if@thesisauthorB & \thesis@authorB\\ \fi
+		\if@thesisauthorC & \thesis@authorC\\ \fi
+        \\
 	Veiledere: & \thesis@supervisor\\
 		& \thesis@supervisorA\\
 		&\\
@@ -681,12 +697,15 @@ Use $\backslash$useyear\{<year>\} to set year.
 \begin{tabular}{p{0.35\textwidth}@{  }p{0.65\textwidth}}
 	Title: & \textbf{\thesis@title}\\
 		&\\
+		\if@firstnamea First  & \@firstnamea\\ \fi
+%	Project no.: &	\thesis@OppgaveNo \\
 	Date: & \nmt@frontpagesyear\\
 		&\\
 	Authors: & \thesis@author\\
-		& \thesis@authorA\\
-		& \thesis@authorB\\
-		& \thesis@authorC\\
+		\if@thesisauthorA & \thesis@authorA\\ \fi
+		\if@thesisauthorB & \thesis@authorB\\ \fi
+		\if@thesisauthorC & \thesis@authorC\\ \fi
+		\\
 	Supervisor: & \thesis@supervisor\\
 		& \thesis@supervisorA\\
 		&\\
