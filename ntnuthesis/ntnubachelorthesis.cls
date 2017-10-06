@@ -427,7 +427,7 @@ Use $\backslash$useyear\{<year>\} to set year.
   \newcommand\nmt@BIT{Bachelor in Information Technology}
   \newcommand\nmt@BABED{IT-supported Business Architecture}
   \newcommand\nmt@AuthorText{Author(s)}
-	\newcommand\nmt@SupervisorText{Supervisor(s)}
+	\newcommand\nmt@SupervisorText{Supervisor}
 \newcommand\thesis@titlehead{\thesis@title}	
 
 
@@ -643,8 +643,8 @@ Use $\backslash$useyear\{<year>\} to set year.
 	{\fontsize{14}{16}\selectfont{	
 	\nmt@SupervisorText
   }
-	\hspace*{21.5mm}{	\thesis@supervisor\\
-		 \thesis@supervisorA\\ \par}}
+	\hspace*{21.5mm}{	\thesis@supervisor\\}
+	\hspace*{61.5mm}{	\thesis@supervisorA\\} \par}
 		
   \end{titlepage}
 

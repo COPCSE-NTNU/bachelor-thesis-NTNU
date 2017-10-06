@@ -110,6 +110,21 @@ document in accordance with standard \LaTeX\ behavior.
   \label{tab:examplecsv}
 \end{figure}
 
+\begin{figure}[htp]  %t top, b bottom, p page | you can also use h to try to get the figure to appear at the current location
+  \centering
+    \begin{gnuplot}[terminal=epslatex,terminaloptions={size 8cm,6cm color}]
+        set xlabel "Age" 
+        set ylabel "IQ" 
+        set key autotitle columnhead
+        set title "Age vs Average IQ"
+        set yrange [0:160]
+        set datafile separator ","
+        plot "images/ageiq.csv" using 1:2 with boxes 
+    \end{gnuplot}
+  \caption[An example of Integrated Graph]{This is a gnuplot graph read from a file}
+  \label{fig:exgnuplotintegratefile}
+\end{figure}
+
 The captions are placed \emph{below} both for the figures and the
 tables. The caption is set in 9pt. If the caption is shorter than one
 line, it is centered.
@@ -183,6 +198,7 @@ You may also want to use descriptive lists
 		  \item Third subitem.
 	  \end{enumerate}
 \end{description}
+ø
 
 
 \section{Bibliographic References}
