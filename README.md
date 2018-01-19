@@ -14,3 +14,5 @@ To add personal information you need to edit:
 inc/BachelorThesisDate.tex
 ```
 This is where the information for the front material is set.
+
+you should add me.
