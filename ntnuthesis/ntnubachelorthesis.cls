@@ -103,10 +103,10 @@
 \def\thesis@supervisorA{}
 \def\thesis@oppdragsgiver{}
 
-\def\thesis@oppgaveNo{}
+%\def\thesis@oppgaveNo{}
 
-\newif\if@firstnamea    \@firstnameafalse
-\def\firstnamea#1{\gdef\@firstnamea{#1} \@firstnameatrue }
+\newif\if@oppgaveNo    \@oppgaveNofalse
+\def\oppgaveNo#1{\gdef\@oppgaveNo{#1} \@oppgaveNotrue }
 
 
 \def\nmt@keywords{}
@@ -660,8 +660,8 @@ Use $\backslash$useyear\{<year>\} to set year.
 \begin{tabular}{p{0.35\textwidth}@{  }p{0.65\textwidth}}
 	Tittel: & \textbf{\thesis@titleNOR}\\
 		&\\
-%	Oppgave nr.:   &	\thesis@OppgaveNo\\
-	Dato: & \nmt@frontpagesyear\\
+\if@oppgaveNo \\Oppgave no.  & \@oppgaveNo\\ \fi	
+    Dato: & \nmt@frontpagesyear\\
 		&\\
 	Deltakere: & \thesis@author\\
 		\if@thesisauthorA & \thesis@authorA\\ \fi
@@ -697,7 +697,7 @@ Use $\backslash$useyear\{<year>\} to set year.
 \begin{tabular}{p{0.35\textwidth}@{  }p{0.65\textwidth}}
 	Title: & \textbf{\thesis@title}\\
 		&\\
-		\if@firstnamea First  & \@firstnamea\\ \fi
+		\if@oppgaveNo \\Project no.  & \@oppgaveNo\\ \fi
 %	Project no.: &	\thesis@OppgaveNo \\
 	Date: & \nmt@frontpagesyear\\
 		&\\
