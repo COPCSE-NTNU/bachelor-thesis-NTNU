@@ -375,6 +375,7 @@ Use $\backslash$useyear\{<year>\} to set year.
   ``BIND'' Bachelor i Ingeni\o{}rfag - data, \\
   ``BADR'' Bachelor i drift av datasystemer, \\
   ``BIT'' Bachelor i informatikk, \\
+  ``BMAT'' Bachelor i Materialteknolgi, \\
   ``BABED'' Bachelor i IT-støttet bedriftsutvikling.
 }
 
@@ -387,6 +388,7 @@ Use $\backslash$useyear\{<year>\} to set year.
   ``BIND'' Bachelor i Ingeni\o{}rfag, \\
   ``BADR'' Bachelor i drift av datasystemer, \\
   ``BIT'' Bachelor i informatikk, \\
+  ``BMAT'' Bachelor i Materialteknolgi, \\
   ``BABED'' Bachelor i IT-støttet bedriftsutvikling.
 }
 
@@ -414,6 +416,10 @@ Use $\backslash$useyear\{<year>\} to set year.
 	\newcommand\nmt@IIK{
 			Department of Information Security and Communication Technology\\
 		\NTNU, 
+		}	
+	\newcommand\nmt@MSE{
+			Department of Material Science and Engineering\\
+		\NTNU, 
 		}
 	
 	\newcommand\nmt@DegreeNameText{}
@@ -426,13 +432,16 @@ Use $\backslash$useyear\{<year>\} to set year.
   \newcommand\nmt@BADR{Bachelor in Information Technology\\with specialization in Network administration}
   \newcommand\nmt@BIT{Bachelor in Information Technology}
   \newcommand\nmt@BABED{IT-supported Business Architecture}
+  \newcommand\nmt@BME{Bachelor in Materials Engineering}
+  \newcommand\nmt@BCE{Bachelor in Chemical Engineering}
+  
   \newcommand\nmt@AuthorText{Author(s)}
 	\newcommand\nmt@SupervisorText{Supervisor}
 \newcommand\thesis@titlehead{\thesis@title}	
 
 
 \DeclareOption{norsk}{
-	
+	\select@language{norsk}
 	\renewcommand\nmt@IDI{%
 	   Institute for Datateknikk og Informatikk\\
 	 	\NTNUno, 
@@ -452,6 +461,9 @@ Use $\backslash$useyear\{<year>\} to set year.
   \renewcommand\nmt@BADR{Bachelor i informatikk med spesialisering i drift av datasystemer}
   \renewcommand\nmt@BIT{Bachelor i informatikk}
   \renewcommand\nmt@BABED{Bachelor i IT-støttet bedriftsutvikling}
+  \renewcommand\nmt@BME{Bachelor i ingeniørfag}
+  \renewcommand\nmt@BCE{Bachelor i ingeniørfag}
+
 
   \renewcommand\nmt@AuthorText{Forfattere}
 	\renewcommand\nmt@SupervisorText{Veileder}
@@ -470,6 +482,8 @@ Use $\backslash$useyear\{<year>\} to set year.
 }
 
 \DeclareOption{nynorsk}{
+\select@language{nynorsk}
+
 	\renewcommand\nmt@DepartmentNameText{%
 	   Institute for datateknikk og informatikk\\
 	 	\NTNUno, 
@@ -575,6 +589,25 @@ Use $\backslash$useyear\{<year>\} to set year.
         \nmt@BABED
             }
 }
+
+\DeclareOption{BMS}{%
+    \renewcommand\nmt@DepartmentNameText{%
+    	\nmt@MSE
+			}
+	\renewcommand\nmt@DegreeNameText{%
+        \nmt@BMS
+            }
+}
+
+\DeclareOption{BCE}{%
+    \renewcommand\nmt@DepartmentNameText{%
+    	\nmt@MSE
+			}
+	\renewcommand\nmt@DegreeNameText{%
+        \nmt@BCE
+            }
+}
+
 
   \renewcommand\nmt@firstpagetext{%
     \begin{tabular}{c}
