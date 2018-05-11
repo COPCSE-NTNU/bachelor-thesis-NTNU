@@ -13,6 +13,9 @@ For code listing we have decided to use the lstlisting package. There are severa
 \lstset{xleftmargin=.05\textwidth, xrightmargin=.05\textwidth}
 
 
+%if you want line numbers set this variable \lstset{numbers=left}
+
+\begin{figure}
 \begin{lstlisting}[language=C++, caption= {Hello World C++ The code listing for Hello World in C++, with colour syntax highlighting.}, label={lst:HelloWorldC++}]
     #include<stdio.h>
     #include<iostream>
@@ -23,7 +26,9 @@ For code listing we have decided to use the lstlisting package. There are severa
         return 0;
     }
 \end{lstlisting}
+\end{figure}
 
+\begin{figure}
 \lstset{language=Python}
 \begin{lstlisting}[caption = {The code listing for a Python increment a matrix example}, label={lst:Python}]
     import numpy as np
@@ -35,6 +40,7 @@ For code listing we have decided to use the lstlisting package. There are severa
         print("Hello World")
         print(a)
 \end{lstlisting}
+\end{figure}
 
 
 We have many students using Go as a programming language.  It is too new to have a definition in \LaTeX so we will create one temporarily until the listing package adds it. You can see the result in Listing~\ref{lst:HelloWorldGo}
@@ -48,9 +54,11 @@ We have many students using Go as a programming language.  It is too new to have
         basicstyle=\ttfamily,
         keywordstyle=\color{red}\ttfamily,
         stringstyle=\color{darkgreen}\ttfamily,
-        commentstyle=\color{blue}\ttfamily,
+        commentstyle=\color{blue}\ttfamily
     }
 
+
+\begin{figure}
 \begin{lstlisting}[language=go, caption={Go code for hello world}, label={lst:HelloWorldGo}]
     package main
 
@@ -60,7 +68,7 @@ We have many students using Go as a programming language.  It is too new to have
     }
     
 \end{lstlisting}
-
+\end{figure}
 
 
 
