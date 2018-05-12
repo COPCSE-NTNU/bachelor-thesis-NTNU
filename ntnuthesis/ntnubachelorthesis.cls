@@ -103,10 +103,10 @@
 \def\thesis@supervisorA{}
 \def\thesis@oppdragsgiver{}
 
-\def\thesis@oppgaveNo{}
+%\def\thesis@oppgaveNo{}
 
-\newif\if@firstnamea    \@firstnameafalse
-\def\firstnamea#1{\gdef\@firstnamea{#1} \@firstnameatrue }
+\newif\if@oppgaveNo    \@oppgaveNofalse
+\def\oppgaveNo#1{\gdef\@oppgaveNo{#1} \@oppgaveNotrue }
 
 
 \def\nmt@keywords{}
@@ -375,6 +375,7 @@ Use $\backslash$useyear\{<year>\} to set year.
   ``BIND'' Bachelor i Ingeni\o{}rfag - data, \\
   ``BADR'' Bachelor i drift av datasystemer, \\
   ``BIT'' Bachelor i informatikk, \\
+  ``BMAT'' Bachelor i Materialteknolgi, \\
   ``BABED'' Bachelor i IT-støttet bedriftsutvikling.
 }
 
@@ -387,6 +388,7 @@ Use $\backslash$useyear\{<year>\} to set year.
   ``BIND'' Bachelor i Ingeni\o{}rfag, \\
   ``BADR'' Bachelor i drift av datasystemer, \\
   ``BIT'' Bachelor i informatikk, \\
+  ``BMAT'' Bachelor i Materialteknolgi, \\
   ``BABED'' Bachelor i IT-støttet bedriftsutvikling.
 }
 
@@ -414,6 +416,10 @@ Use $\backslash$useyear\{<year>\} to set year.
 	\newcommand\nmt@IIK{
 			Department of Information Security and Communication Technology\\
 		\NTNU, 
+		}	
+	\newcommand\nmt@MSE{
+			Department of Material Science and Engineering\\
+		\NTNU, 
 		}
 	
 	\newcommand\nmt@DegreeNameText{}
@@ -426,13 +432,16 @@ Use $\backslash$useyear\{<year>\} to set year.
   \newcommand\nmt@BADR{Bachelor in Information Technology\\with specialization in Network administration}
   \newcommand\nmt@BIT{Bachelor in Information Technology}
   \newcommand\nmt@BABED{IT-supported Business Architecture}
+  \newcommand\nmt@BME{Bachelor in Materials Engineering}
+  \newcommand\nmt@BCE{Bachelor in Chemical Engineering}
+  
   \newcommand\nmt@AuthorText{Author(s)}
 	\newcommand\nmt@SupervisorText{Supervisor}
 \newcommand\thesis@titlehead{\thesis@title}	
 
 
 \DeclareOption{norsk}{
-	
+	\select@language{norsk}
 	\renewcommand\nmt@IDI{%
 	   Institute for Datateknikk og Informatikk\\
 	 	\NTNUno, 
@@ -452,6 +461,9 @@ Use $\backslash$useyear\{<year>\} to set year.
   \renewcommand\nmt@BADR{Bachelor i informatikk med spesialisering i drift av datasystemer}
   \renewcommand\nmt@BIT{Bachelor i informatikk}
   \renewcommand\nmt@BABED{Bachelor i IT-støttet bedriftsutvikling}
+  \renewcommand\nmt@BME{Bachelor i ingeniørfag}
+  \renewcommand\nmt@BCE{Bachelor i ingeniørfag}
+
 
   \renewcommand\nmt@AuthorText{Forfattere}
 	\renewcommand\nmt@SupervisorText{Veileder}
@@ -470,6 +482,8 @@ Use $\backslash$useyear\{<year>\} to set year.
 }
 
 \DeclareOption{nynorsk}{
+\select@language{nynorsk}
+
 	\renewcommand\nmt@DepartmentNameText{%
 	   Institute for datateknikk og informatikk\\
 	 	\NTNUno, 
@@ -576,6 +590,25 @@ Use $\backslash$useyear\{<year>\} to set year.
             }
 }
 
+\DeclareOption{BMS}{%
+    \renewcommand\nmt@DepartmentNameText{%
+    	\nmt@MSE
+			}
+	\renewcommand\nmt@DegreeNameText{%
+        \nmt@BMS
+            }
+}
+
+\DeclareOption{BCE}{%
+    \renewcommand\nmt@DepartmentNameText{%
+    	\nmt@MSE
+			}
+	\renewcommand\nmt@DegreeNameText{%
+        \nmt@BCE
+            }
+}
+
+
   \renewcommand\nmt@firstpagetext{%
     \begin{tabular}{c}
     	\nmt@DegreeNameText\\
@@ -660,8 +693,8 @@ Use $\backslash$useyear\{<year>\} to set year.
 \begin{tabular}{p{0.35\textwidth}@{  }p{0.65\textwidth}}
 	Tittel: & \textbf{\thesis@titleNOR}\\
 		&\\
-%	Oppgave nr.:   &	\thesis@OppgaveNo\\
-	Dato: & \nmt@frontpagesyear\\
+\if@oppgaveNo \\Oppgave no.  & \@oppgaveNo\\ \fi	
+    Dato: & \nmt@frontpagesyear\\
 		&\\
 	Deltakere: & \thesis@author\\
 		\if@thesisauthorA & \thesis@authorA\\ \fi
@@ -697,7 +730,7 @@ Use $\backslash$useyear\{<year>\} to set year.
 \begin{tabular}{p{0.35\textwidth}@{  }p{0.65\textwidth}}
 	Title: & \textbf{\thesis@title}\\
 		&\\
-		\if@firstnamea First  & \@firstnamea\\ \fi
+		\if@oppgaveNo \\Project no.  & \@oppgaveNo\\ \fi
 %	Project no.: &	\thesis@OppgaveNo \\
 	Date: & \nmt@frontpagesyear\\
 		&\\
