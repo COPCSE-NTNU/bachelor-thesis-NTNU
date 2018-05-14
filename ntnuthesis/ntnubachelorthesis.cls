@@ -50,6 +50,19 @@
 \RequirePackage{hyperref}
 \RequirePackage{color}              % For colouring text  
 
+
+\RequirePackage{etoolbox}
+\RequirePackage{totcount,assoccnt}
+
+\newcounter{totalchapters}
+\newcounter{appendixchapters}
+\DeclareAssociatedCounters{chapter}{totalchapters,appendixchapters}
+\regtotcounter{totalchapters}
+\regtotcounter{appendixchapters}
+
+\newcounter{truechapters}
+\regtotcounter{truechapters}
+
 \hypersetup{colorlinks=true,     
 		linkcolor=blue,          % color of internal links (change box color with linkbordercolor)
     citecolor=blue,        % color of links to bibliography
@@ -66,7 +79,14 @@
 \setlist[itemize,3]{label=$\cdot$}
 %\RequirePackage[absolute]{textpos}
 
+\preto\appendix{%
 
+\label{endofmain} % for page counting use
+  % save the number of true chapters
+  \setcounter{truechapters}{\value{chapter}}%
+  % reset the number of chapters
+  \setcounter{appendixchapters}{0}%
+}
 
 %% MAIN PART
 
@@ -709,8 +729,8 @@ Use $\backslash$useyear\{<year>\} to set year.
 	Kontaktperson: & \nmt@contact\\
 		&\\
 	N\o{}kkelord: & \nmt@keywordsNOR\\
-	Antall sider: & \pageref{LastPage}\\
-	Antall vedlegg: & \nmt@appnumber\\
+	Antall sider: & \pageref{endofmain}\\
+	Antall vedlegg: & \total{appendixchapters}\\
 	Tilgjengelighet: & \AA{}pen\\ % this needs updating \nmt@pubNOR}\\
 		&\\
 	\hline\\
@@ -747,8 +767,8 @@ Use $\backslash$useyear\{<year>\} to set year.
 	Contact Person: & \nmt@contact\\
 		&\\
 	Keywords: & \nmt@keywords\\
-	Pages: & \pageref{LastPage}\\
-	Attachments: & \nmt@appnumber\\
+	Pages: & \pageref{endofmain}\\
+	Attachments: & \total{appendixchapters}\\
 	Availability: & Open\\ % this needs updating to use \nmt@pub}\\
 		&\\
 	\hline\\
