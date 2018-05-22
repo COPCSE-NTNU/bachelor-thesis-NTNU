@@ -49,7 +49,7 @@
 \RequirePackage{graphicx}
 \RequirePackage{hyperref}
 \RequirePackage{color}              % For colouring text  
-
+\RequirePackage{pdfpages}    
 
 \RequirePackage{etoolbox}
 \RequirePackage{totcount,assoccnt}
