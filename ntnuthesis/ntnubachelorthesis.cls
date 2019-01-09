@@ -48,6 +48,7 @@
 %\RequirePackage[pdftex]{graphicx, hyperref}
 \RequirePackage{graphicx}
 \RequirePackage{hyperref}
+%\Requirepackage[capitalise,noabbrev]{cleveref}
 \RequirePackage{color}              % For colouring text  
 \RequirePackage{pdfpages}    
 
