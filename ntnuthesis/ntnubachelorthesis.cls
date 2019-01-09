@@ -390,27 +390,31 @@ Use $\backslash$useyear\{<year>\} to set year.
 \newcommand\nmt@firstpagetext{%
   \noindent Use this class with options\\ 
   ``BSP'' Bachelor i Spillprogrammering,\\
-  ``BRD'' Bachelor i drift av nettverk og datasystemer,\\
+  ``BDR'' Bachelor i Drift av nettverk og datasystemer,\\
   ``BIS'' Bachelor i Informasjonssikkerhet,\\
   ``BPU'' Bachelor i Programvareutvikling, \\
   ``BIND'' Bachelor i Ingeni\o{}rfag - data, \\
-  ``BADR'' Bachelor i drift av datasystemer, \\
+  ``BADR'' Bachelor i Drift av nettverk og datasystemer, \\
   ``BIT'' Bachelor i informatikk, \\
   ``BMAT'' Bachelor i Materialteknolgi, \\
-  ``BABED'' Bachelor i IT-støttet bedriftsutvikling.
+  ``BABED'' Bachelor i IT-støttet bedriftsutvikling, \\
+  ``BPROG'' Bachelor i Programmering [Spill|Applikasjoner], \\
+  ``BITSEC'' Bachelor i IT-drift og informasjonssikkerhet.
 }
 
 \newcommand\nmt@secondpagetext{%
   \noindent Use this class with options\\ 
   ``BSP'' Bachelor i Spillprogrammering,\\
-  ``BRD'' Bachelor i drift av nettverk og datasystemer,\\
+  ``BDR'' Bachelor i Drift av nettverk og datasystemer,\\
   ``BIS'' Bachelor i Informasjonssikkerhet,\\
   ``BPU'' Bachelor i Programvareutvikling, \\
   ``BIND'' Bachelor i Ingeni\o{}rfag, \\
   ``BADR'' Bachelor i drift av datasystemer, \\
   ``BIT'' Bachelor i informatikk, \\
   ``BMAT'' Bachelor i Materialteknolgi, \\
-  ``BABED'' Bachelor i IT-støttet bedriftsutvikling.
+  ``BABED'' Bachelor i IT-støttet bedriftsutvikling, \\
+  ``BPROG'' Bachelor i Programmering [Spill|Applikasjoner], \\
+  ``BITSEC'' Bachelor i IT-drift og informasjonssikkerhet.
 }
 
 	    
@@ -455,6 +459,7 @@ Use $\backslash$useyear\{<year>\} to set year.
   \newcommand\nmt@BABED{IT-supported Business Architecture}
   \newcommand\nmt@BME{Bachelor in Materials Engineering}
   \newcommand\nmt@BCE{Bachelor in Chemical Engineering}
+  \newcommand\nmt@BITSEC{Bachelor in IT-Operations and Information Security}
   
   \newcommand\nmt@AuthorText{Author(s)}
 	\newcommand\nmt@SupervisorText{Supervisor}
@@ -484,6 +489,7 @@ Use $\backslash$useyear\{<year>\} to set year.
   \renewcommand\nmt@BABED{Bachelor i IT-støttet bedriftsutvikling}
   \renewcommand\nmt@BME{Bachelor i ingeniørfag}
   \renewcommand\nmt@BCE{Bachelor i ingeniørfag}
+  \renewcommand\nmt@BITSEC{Bachelor i IT-drift og informasjonssikkerhet}
 
 
   \renewcommand\nmt@AuthorText{Forfattere}
@@ -517,6 +523,7 @@ Use $\backslash$useyear\{<year>\} to set year.
   \renewcommand\nmt@BADR{Bachelor i informatikk med spesialisering i drift av datasystemer}
   \renewcommand\nmt@BIT{Bachelor i informatikk}
   \renewcommand\nmt@BABED{Bachelor i IT-støttet bedriftsutvikling}
+  \renewcommand\nmt@BITSEC{Bachelor i IT-drift og informasjonssikkerhet}
 
   \renewcommand\nmt@AuthorText{Forfattere}
 	\renewcommand\nmt@SupervisorText{Veileder}
@@ -572,6 +579,14 @@ Use $\backslash$useyear\{<year>\} to set year.
 			}
 	\renewcommand\nmt@DegreeNameText{%
     	\nmt@BIS
+			}}
+
+\DeclareOption{BITSEC}{%
+  \renewcommand\nmt@DepartmentNameText{%
+    	\nmt@IIK
+			}
+	\renewcommand\nmt@DegreeNameText{%
+    	\nmt@BITSEC
 			}}
 
 \DeclareOption{BPU}{%
