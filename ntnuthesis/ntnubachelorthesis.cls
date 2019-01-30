@@ -48,7 +48,21 @@
 %\RequirePackage[pdftex]{graphicx, hyperref}
 \RequirePackage{graphicx}
 \RequirePackage{hyperref}
+%\Requirepackage[capitalise,noabbrev]{cleveref}
 \RequirePackage{color}              % For colouring text  
+\RequirePackage{pdfpages}    
+
+\RequirePackage{etoolbox}
+\RequirePackage{totcount,assoccnt}
+
+\newcounter{totalchapters}
+\newcounter{appendixchapters}
+\DeclareAssociatedCounters{chapter}{totalchapters,appendixchapters}
+\regtotcounter{totalchapters}
+\regtotcounter{appendixchapters}
+
+\newcounter{truechapters}
+\regtotcounter{truechapters}
 
 \hypersetup{colorlinks=true,     
 		linkcolor=blue,          % color of internal links (change box color with linkbordercolor)
@@ -66,7 +80,14 @@
 \setlist[itemize,3]{label=$\cdot$}
 %\RequirePackage[absolute]{textpos}
 
+\preto\appendix{%
 
+\label{endofmain} % for page counting use
+  % save the number of true chapters
+  \setcounter{truechapters}{\value{chapter}}%
+  % reset the number of chapters
+  \setcounter{appendixchapters}{0}%
+}
 
 %% MAIN PART
 
@@ -103,10 +124,10 @@
 \def\thesis@supervisorA{}
 \def\thesis@oppdragsgiver{}
 
-\def\thesis@oppgaveNo{}
+%\def\thesis@oppgaveNo{}
 
-\newif\if@firstnamea    \@firstnameafalse
-\def\firstnamea#1{\gdef\@firstnamea{#1} \@firstnameatrue }
+\newif\if@oppgaveNo    \@oppgaveNofalse
+\def\oppgaveNo#1{\gdef\@oppgaveNo{#1} \@oppgaveNotrue }
 
 
 \def\nmt@keywords{}
@@ -369,25 +390,31 @@ Use $\backslash$useyear\{<year>\} to set year.
 \newcommand\nmt@firstpagetext{%
   \noindent Use this class with options\\ 
   ``BSP'' Bachelor i Spillprogrammering,\\
-  ``BRD'' Bachelor i drift av nettverk og datasystemer,\\
+  ``BDR'' Bachelor i Drift av nettverk og datasystemer,\\
   ``BIS'' Bachelor i Informasjonssikkerhet,\\
   ``BPU'' Bachelor i Programvareutvikling, \\
   ``BIND'' Bachelor i Ingeni\o{}rfag - data, \\
-  ``BADR'' Bachelor i drift av datasystemer, \\
+  ``BADR'' Bachelor i Drift av nettverk og datasystemer, \\
   ``BIT'' Bachelor i informatikk, \\
-  ``BABED'' Bachelor i IT-støttet bedriftsutvikling.
+  ``BMAT'' Bachelor i Materialteknolgi, \\
+  ``BABED'' Bachelor i IT-støttet bedriftsutvikling, \\
+  ``BPROG'' Bachelor i Programmering [Spill|Applikasjoner], \\
+  ``BITSEC'' Bachelor i IT-drift og informasjonssikkerhet.
 }
 
 \newcommand\nmt@secondpagetext{%
   \noindent Use this class with options\\ 
   ``BSP'' Bachelor i Spillprogrammering,\\
-  ``BRD'' Bachelor i drift av nettverk og datasystemer,\\
+  ``BDR'' Bachelor i Drift av nettverk og datasystemer,\\
   ``BIS'' Bachelor i Informasjonssikkerhet,\\
   ``BPU'' Bachelor i Programvareutvikling, \\
   ``BIND'' Bachelor i Ingeni\o{}rfag, \\
   ``BADR'' Bachelor i drift av datasystemer, \\
   ``BIT'' Bachelor i informatikk, \\
-  ``BABED'' Bachelor i IT-støttet bedriftsutvikling.
+  ``BMAT'' Bachelor i Materialteknolgi, \\
+  ``BABED'' Bachelor i IT-støttet bedriftsutvikling, \\
+  ``BPROG'' Bachelor i Programmering [Spill|Applikasjoner], \\
+  ``BITSEC'' Bachelor i IT-drift og informasjonssikkerhet.
 }
 
 	    
@@ -414,6 +441,10 @@ Use $\backslash$useyear\{<year>\} to set year.
 	\newcommand\nmt@IIK{
 			Department of Information Security and Communication Technology\\
 		\NTNU, 
+		}	
+	\newcommand\nmt@MSE{
+			Department of Material Science and Engineering\\
+		\NTNU, 
 		}
 	
 	\newcommand\nmt@DegreeNameText{}
@@ -426,13 +457,17 @@ Use $\backslash$useyear\{<year>\} to set year.
   \newcommand\nmt@BADR{Bachelor in Information Technology\\with specialization in Network administration}
   \newcommand\nmt@BIT{Bachelor in Information Technology}
   \newcommand\nmt@BABED{IT-supported Business Architecture}
+  \newcommand\nmt@BME{Bachelor in Materials Engineering}
+  \newcommand\nmt@BCE{Bachelor in Chemical Engineering}
+  \newcommand\nmt@BITSEC{Bachelor in IT-Operations and Information Security}
+  
   \newcommand\nmt@AuthorText{Author(s)}
 	\newcommand\nmt@SupervisorText{Supervisor}
 \newcommand\thesis@titlehead{\thesis@title}	
 
 
 \DeclareOption{norsk}{
-	
+	\select@language{norsk}
 	\renewcommand\nmt@IDI{%
 	   Institute for Datateknikk og Informatikk\\
 	 	\NTNUno, 
@@ -452,6 +487,10 @@ Use $\backslash$useyear\{<year>\} to set year.
   \renewcommand\nmt@BADR{Bachelor i informatikk med spesialisering i drift av datasystemer}
   \renewcommand\nmt@BIT{Bachelor i informatikk}
   \renewcommand\nmt@BABED{Bachelor i IT-støttet bedriftsutvikling}
+  \renewcommand\nmt@BME{Bachelor i ingeniørfag}
+  \renewcommand\nmt@BCE{Bachelor i ingeniørfag}
+  \renewcommand\nmt@BITSEC{Bachelor i IT-drift og informasjonssikkerhet}
+
 
   \renewcommand\nmt@AuthorText{Forfattere}
 	\renewcommand\nmt@SupervisorText{Veileder}
@@ -470,6 +509,8 @@ Use $\backslash$useyear\{<year>\} to set year.
 }
 
 \DeclareOption{nynorsk}{
+\select@language{nynorsk}
+
 	\renewcommand\nmt@DepartmentNameText{%
 	   Institute for datateknikk og informatikk\\
 	 	\NTNUno, 
@@ -482,6 +523,7 @@ Use $\backslash$useyear\{<year>\} to set year.
   \renewcommand\nmt@BADR{Bachelor i informatikk med spesialisering i drift av datasystemer}
   \renewcommand\nmt@BIT{Bachelor i informatikk}
   \renewcommand\nmt@BABED{Bachelor i IT-støttet bedriftsutvikling}
+  \renewcommand\nmt@BITSEC{Bachelor i IT-drift og informasjonssikkerhet}
 
   \renewcommand\nmt@AuthorText{Forfattere}
 	\renewcommand\nmt@SupervisorText{Veileder}
@@ -539,6 +581,14 @@ Use $\backslash$useyear\{<year>\} to set year.
     	\nmt@BIS
 			}}
 
+\DeclareOption{BITSEC}{%
+  \renewcommand\nmt@DepartmentNameText{%
+    	\nmt@IIK
+			}
+	\renewcommand\nmt@DegreeNameText{%
+    	\nmt@BITSEC
+			}}
+
 \DeclareOption{BPU}{%
 
   \renewcommand\nmt@DepartmentNameText{%
@@ -575,6 +625,25 @@ Use $\backslash$useyear\{<year>\} to set year.
         \nmt@BABED
             }
 }
+
+\DeclareOption{BMS}{%
+    \renewcommand\nmt@DepartmentNameText{%
+    	\nmt@MSE
+			}
+	\renewcommand\nmt@DegreeNameText{%
+        \nmt@BMS
+            }
+}
+
+\DeclareOption{BCE}{%
+    \renewcommand\nmt@DepartmentNameText{%
+    	\nmt@MSE
+			}
+	\renewcommand\nmt@DegreeNameText{%
+        \nmt@BCE
+            }
+}
+
 
   \renewcommand\nmt@firstpagetext{%
     \begin{tabular}{c}
@@ -660,8 +729,8 @@ Use $\backslash$useyear\{<year>\} to set year.
 \begin{tabular}{p{0.35\textwidth}@{  }p{0.65\textwidth}}
 	Tittel: & \textbf{\thesis@titleNOR}\\
 		&\\
-%	Oppgave nr.:   &	\thesis@OppgaveNo\\
-	Dato: & \nmt@frontpagesyear\\
+\if@oppgaveNo \\Oppgave no.  & \@oppgaveNo\\ \fi	
+    Dato: & \nmt@frontpagesyear\\
 		&\\
 	Deltakere: & \thesis@author\\
 		\if@thesisauthorA & \thesis@authorA\\ \fi
@@ -676,8 +745,8 @@ Use $\backslash$useyear\{<year>\} to set year.
 	Kontaktperson: & \nmt@contact\\
 		&\\
 	N\o{}kkelord: & \nmt@keywordsNOR\\
-	Antall sider: & \pageref{LastPage}\\
-	Antall vedlegg: & \nmt@appnumber\\
+	Antall sider: & \pageref{endofmain}\\
+	Antall vedlegg: & \total{appendixchapters}\\
 	Tilgjengelighet: & \AA{}pen\\ % this needs updating \nmt@pubNOR}\\
 		&\\
 	\hline\\
@@ -697,7 +766,7 @@ Use $\backslash$useyear\{<year>\} to set year.
 \begin{tabular}{p{0.35\textwidth}@{  }p{0.65\textwidth}}
 	Title: & \textbf{\thesis@title}\\
 		&\\
-		\if@firstnamea First  & \@firstnamea\\ \fi
+		\if@oppgaveNo \\Project no.  & \@oppgaveNo\\ \fi
 %	Project no.: &	\thesis@OppgaveNo \\
 	Date: & \nmt@frontpagesyear\\
 		&\\
@@ -714,8 +783,8 @@ Use $\backslash$useyear\{<year>\} to set year.
 	Contact Person: & \nmt@contact\\
 		&\\
 	Keywords: & \nmt@keywords\\
-	Pages: & \pageref{LastPage}\\
-	Attachments: & \nmt@appnumber\\
+	Pages: & \pageref{endofmain}\\
+	Attachments: & \total{appendixchapters}\\
 	Availability: & Open\\ % this needs updating to use \nmt@pub}\\
 		&\\
 	\hline\\

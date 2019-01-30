@@ -10,9 +10,14 @@
 %%  ``BADR'' Bachelor i drift av datasystemer, \\
 %%  ``BIT'' Bachelor i informatikk, \\
 %%  ``BABED'' Bachelor i IT-støttet bedriftsutvikling.
-%%   for example \documentclass[BIS,norsk,twoside]{ntnuthesis/ntnubachelorthesis}
+%%  ``BMS'' Bachelor i material science.
+%%  ``BCE'' Bachelor i chemical science. 
+%%  ``BCE'' Bachelor i chemical science.  
+%%  ``BPROG''  Bachelor in Programming [Games|Applications]
+%%  ``BITSEC''  Bachelor in IT-Operations and Information security 
+%%   for example \documentclass[BCE,norsk,twoside]{ntnuthesis/ntnubachelorthesis}
 
-\documentclass[BADR,english,oneside]{ntnuthesis/ntnubachelorthesis}
+\documentclass[BITSEC,norsk,oneside]{ntnuthesis/ntnubachelorthesis}
 
 \usepackage{csvsimple}
 \usepackage{booktabs}
@@ -23,7 +28,7 @@
 \definecolor{darkgreen}{rgb}{0,0.5,0}
 \definecolor{darkred}{rgb}{0.5,0.0,0}
 
-\lstset{        basicstyle=\ttfamily,
+\lstset{ basicstyle=\ttfamily,
                 keywordstyle=\color{blue}\ttfamily,
                 stringstyle=\color{darkred}\ttfamily,
                 commentstyle=\color{darkgreen}\ttfamily,
@@ -97,11 +102,11 @@
 \bibliographystyle{ntnuthesis/ntnubachelorthesis}
 \bibliography{inc/BachelorExample}
 
-\appendix %after this line all chapters will have leters instead of numbers
-%\input{projectplan}
-%\input{gantt}
+\appendix %after this line all chapters will have letters instead of numbers
+\input{inc/projectplan}
+
+%\input{inc/gantt}
 \input{inc/meetinglog}
-%\input{progressreviews}
-%\input{worklog}
+%\input{inc/worklog}
 
 \end{document}
