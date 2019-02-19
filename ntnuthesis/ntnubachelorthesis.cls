@@ -278,7 +278,7 @@
 
 \renewcommand\chapter{%\if@openright\cleardoublepage\else\clearpage\fi
   \cleardoublepage
-%  \thispagestyle{plain}%
+  \thispagestyle{plain}
   \global\@topnum\z@
   \@afterindentfalse
   \secdef\@chapter\@schapter}
