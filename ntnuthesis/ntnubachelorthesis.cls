@@ -37,8 +37,7 @@
 
 \RequirePackage{geometry}
 \RequirePackage[T1]{fontenc}
-\RequirePackage{charter}
-\RequirePackage{euler}
+\RequirePackage[charter]{mathdesign}
 \RequirePackage{lastpage}
 \RequirePackage{babel}
 \RequirePackage{enumitem}
