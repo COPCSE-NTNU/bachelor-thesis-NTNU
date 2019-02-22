@@ -1,4 +1,4 @@
-BachelorThesis.pdf
+BachelorExample.pdf
 *.tcp
 *.tps
 *.aux
@@ -10,6 +10,7 @@ BachelorThesis.pdf
 *.lot
 *.out
 *.toc
+*.dvi
 *~
 *.gnuplot
 *.gnuploterrors
