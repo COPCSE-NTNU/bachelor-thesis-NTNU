@@ -1,0 +1,15 @@
+BachelorThesis.pdf
+*.tcp
+*.tps
+*.aux
+*.bbl
+*.blg
+*.lof
+*.log
+*.lol
+*.lot
+*.out
+*.toc
+*~
+*.gnuplot
+*.gnuploterrors
