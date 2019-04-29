@@ -452,7 +452,7 @@ Use $\backslash$useyear\{<year>\} to set year.
   \newcommand\nmt@BRD{Bachelor of Science in Network and System Administration}
   \newcommand\nmt@BIS{Bachelor in Information Security}
   \newcommand\nmt@BPU{Bachelor in Software Engineering}
-  \newcommand\nmt@BIND{Bachelor of Science in Engineering - Computer Science}
+  \newcommand\nmt@BIND{Bachelor of Engineering in Computer Science}
   \newcommand\nmt@BADR{Bachelor in Information Technology\\with specialization in Network administration}
   \newcommand\nmt@BIT{Bachelor in Information Technology}
   \newcommand\nmt@BABED{IT-supported Business Architecture}
