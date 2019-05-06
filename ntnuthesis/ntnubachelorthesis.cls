@@ -708,11 +708,13 @@ Use $\backslash$useyear\{<year>\} to set year.
 	\end{center}%
 	
 	\vspace*{\fill}
-	{\fontsize{14}{16}\selectfont{	
-	\nmt@SupervisorText
-  }
-	\hspace*{21.5mm}{	\thesis@supervisor\\}
-	\hspace*{49.75mm}{	\thesis@supervisorA\\} \par}
+	{
+          \fontsize{14}{16}\selectfont
+          \begin{tabular}{p{0.35\textwidth}@{  }p{0.65\textwidth}}
+            \nmt@SupervisorText & \thesis@supervisor \\
+            & \thesis@supervisorA
+          \end{tabular}
+        }
 		
   \end{titlepage}
 
