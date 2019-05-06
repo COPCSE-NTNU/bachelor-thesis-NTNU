@@ -712,7 +712,7 @@ Use $\backslash$useyear\{<year>\} to set year.
 	\nmt@SupervisorText
   }
 	\hspace*{21.5mm}{	\thesis@supervisor\\}
-	\hspace*{61.5mm}{	\thesis@supervisorA\\} \par}
+	\hspace*{49.75mm}{	\thesis@supervisorA\\} \par}
 		
   \end{titlepage}
 
