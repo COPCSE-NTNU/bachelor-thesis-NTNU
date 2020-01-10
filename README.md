@@ -1,3 +1,9 @@
+# WARNING -- this project is deprecated
+
+This project has been **deprecated and superceded** by [the new, combined (BSc/MSc/Phd) thesis template](https://github.com/COPCSE-NTNU/thesis-NTNU). Use the new template instead of this one.
+
+
+
 # Bachelor thesis template (NTNU)
 
 A Latex template, class file, and examples for writing a bachelor thesis at NTNU
